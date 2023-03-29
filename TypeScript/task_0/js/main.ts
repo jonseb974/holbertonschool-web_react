@@ -8,14 +8,14 @@ interface Student {
 const student1: Student = {
     firstName: 'Bruce',
     lastName: 'Wayne',
-    age: '27',
+    age: 27,
     location: 'gotham city',
 };
 
 const student2: Student = {
     firstName: 'Clark',
     lastName: 'Kent',
-    age: '30',
+    age: 30,
     location: 'Metropolis',
 };
 
