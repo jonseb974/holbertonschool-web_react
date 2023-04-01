@@ -1,7 +1,7 @@
 {
   "name": "typescript_dependencies",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a readme file.",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --open",
