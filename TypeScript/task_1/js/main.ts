@@ -5,14 +5,32 @@ export interface Teacher {
     yearsOfExperience?: number;
     location: string;
     [propName: string]: any;
-};
+}
 
-const teacher3: Teacher = {
-  firstName: 'John',
-  fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
-  contract: false,
-};
+export interface Directors extends Teacher {
+  numberOfReports: number;
+}
 
-console.log(teacher3);
+export interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+export const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
+  firstName: string;
+  lastName: string;
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+  displayName(): string {
+    return this.firstName;
+  }
+};
