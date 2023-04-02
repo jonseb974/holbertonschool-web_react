@@ -15,6 +15,14 @@ export interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
+export const printTeacher: printTeacherFunction = function (firstName: string, lastName: string) {
+  return `${firstName.slice(0, 1)}. ${lastName}`;
+}
+
+interface StudentConstructor {
+  new(firstNme: string, lastName: string): StudentClassInterface;
+}
+
 interface StudentClassInterface {
   workOnHomework(): string;
   displayName(): string;
@@ -33,4 +41,4 @@ export const StudentClass: StudentConstructor = class StudentClass implements St
   displayName(): string {
     return this.firstName;
   }
-};
+}
