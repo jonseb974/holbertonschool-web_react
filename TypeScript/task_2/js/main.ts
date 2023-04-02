@@ -42,7 +42,7 @@ export function createEmployee(salary: number | string) {
   }
 }
 
-export function executeWork(employee: DirectorInterface | TeacherInterface): employee is Director {
+export function isDirector(employee: DirectorInterface | TeacherInterface): employee is Director {
   return employee instanceof Director;
 }
 
