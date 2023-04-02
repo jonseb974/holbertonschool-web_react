@@ -1,8 +1,8 @@
 interface Teacher {
-    firstName: string;
-    lastName: string;
-    fullTimeEmployee: boolean;
-    yearsOfExperience?: number;
-    location: string;
+    readonly firstName: string;
+    readonly lastName: string;
+    readonly fullTimeEmployee: boolean;
+    readonly yearsOfExperience?: number;
+    readonly location: string;
     [propName: string]: any;
 };
