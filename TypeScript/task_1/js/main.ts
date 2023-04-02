@@ -16,16 +16,16 @@ export interface printTeacherFunction {
 }
 
 export const printTeacher: printTeacherFunction = function (firstName: string, lastName: string) {
-  return `${firstName.slice(0, 1)}. ${lastName}`;
+  return `${firstName.slice(0, 1)}.${lastName}`;
 }
 
 interface StudentConstructor {
   new(firstNme: string, lastName: string): StudentClassInterface;
 }
 
-interface StudentClassInterface {
-  workOnHomework(): string;
+export interface StudentClassInterface {
   displayName(): string;
+  workOnHomework(): string;
 }
 
 export const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
