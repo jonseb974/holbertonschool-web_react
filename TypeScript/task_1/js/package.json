@@ -2,7 +2,6 @@
   "name": "main",
   "version": "1.0.0",
   "main": "index.js",
-  "build": "webpack",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     
@@ -10,6 +9,12 @@
   "repository": {
     "type": "git",
     "url": "holbertonschool-web_react"
+  },
+  {
+  "name": "my-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
   },
   "author": "jonseb974",
   "license": "ISC",
