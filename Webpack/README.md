@@ -6,9 +6,9 @@
 
 ### Read or watch:
 
-    [Webpack documentation](https://intranet.hbtn.io/rltoken/j_Eo1Fx5ddlAk_8R4YK95g)
-   [Webpack beginner guide](https://intranet.hbtn.io/rltoken/6ddGUw-ILl5oTqDoc-uzTg)
-    [npm-package.json](https://intranet.hbtn.io/rltoken/vbLU_yBRAvppEHxSnWla0g)
+   - [Webpack documentation](https://intranet.hbtn.io/rltoken/j_Eo1Fx5ddlAk_8R4YK95g)
+   - [Webpack beginner guide](https://intranet.hbtn.io/rltoken/6ddGUw-ILl5oTqDoc-uzTg)
+   - [npm-package.json](https://intranet.hbtn.io/rltoken/vbLU_yBRAvppEHxSnWla0g)
 
 ## Learning Objectives
 
