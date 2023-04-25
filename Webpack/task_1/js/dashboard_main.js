@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import $ from 'lodash'; // import _ from
+import _ from 'lodash'; // import _ from
 
 $('body').append('<p>Holberton Dashboard</p>');
 $('body').append('<p>Dashboard data for the students</p>');
