@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./js/dashboard_main.js":
+/*!******************************!*\
+  !*** ./js/dashboard_main.js ***!
+  \******************************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://task_1/./src/index.js?");
+eval("throw new Error(\"Module parse failed: Identifier '$' has already been declared (3:7)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| import $ from 'jquery';\\n| \\n> import $ from 'lodash'; // import _ from\\n| \\n| $('body').append('<p>Holberton Dashboard</p>');\");\n\n//# sourceURL=webpack://task_1/./js/dashboard_main.js?");
 
 /***/ })
 
@@ -24,9 +24,9 @@ eval("\n\n//# sourceURL=webpack://task_1/./src/index.js?");
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	__webpack_modules__["./js/dashboard_main.js"]();
 /******/ 	
 /******/ })()
 ;
