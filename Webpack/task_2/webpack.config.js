@@ -8,5 +8,13 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'file-loader', 'image-webpack-loader']
+            }
+        ]
     }
 };
