@@ -1,26 +1,12 @@
+/* Webpack.config.js*/
+
+const path = require('path');
+
 module.exports = {
-    entry: './src/index.js'
-  };
-  module.exports = {
-    entry: './src/index.js',
+    mode: 'production',
+    entry: './js/dashboard_main.js',
     output: {
-      path: __dirname + '/dist',
-      filename: 'bundle.js'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public')
     }
-  };
-  module.exports = {
-    entry: './src/index.js',
-    output: {
-      path: __dirname + '/dist',
-      filename: 'bundle.js'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
-        }
-      ]
-    }
-  };
-  
+};
