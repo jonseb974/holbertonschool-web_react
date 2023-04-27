@@ -4,9 +4,13 @@ import ReactDOM from 'react-dom'; // 'react-dom/client';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Notifications from './Notifications';
 
 ReactDOM.render(
   <React.StrictMode>
+    <div className="root-notifications">
+      <Notifications />
+    </div>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
