@@ -1,21 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { component } from 'react'
+import logo from './logo.jpg';
+//import './App.css';
 
-function App() {
-  return (
+export default class App extends Components {
+  render() {
+    return (
     <div className="App">
-      <div className="App-header">
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>School dashboard</h1>
-      </div>
-      <div className='App-body'>
+      </header>
+      <body className='App-body'>
         <p>Login to access the full dashboard</p>
-      </div>
-      <div className='App-footer'>
+      </body>
+      <footer className='App-footer'>
         <p>Copyright 2020 - holberton School</p>
-      </div>
+      </footer>
     </div>
-  );
-}
-
-export default App;
+    )
+  }
+}  
