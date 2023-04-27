@@ -1,3 +1,7 @@
+:root {
+	--primary-color: #E11D3F;
+	font: 18px Helvetica, Arial, sans-serif;
+}
 .App {
   display: flex;
   flex-direction: column;

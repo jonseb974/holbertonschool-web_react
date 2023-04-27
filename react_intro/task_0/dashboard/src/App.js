@@ -2,7 +2,7 @@ import React, { component } from 'react'
 import logo from './logo.jpg';
 //import './App.css';
 
-export default class App extends Components {
+export default class App extends Component {
   render() {
     return (
     <div className="App">
