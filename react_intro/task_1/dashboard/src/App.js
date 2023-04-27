@@ -14,7 +14,7 @@ export default class App extends Component {
         <p>Login to access the full dashboard</p>
       </body>
       <footer className='App-footer'>
-        <p>Copyright 2020 - holberton School</p>
+        <p>Copyright 2020 - holberton School {getFullYear()} - {getFooterCopy(true)}</p>
       </footer>
     </div>
     )
