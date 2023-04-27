@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import logo from './logo.jpg';
+import { getFullYear, getFooterCopy } from './utils'
+
 //import './App.css';
 
 export default class App extends Component {
