@@ -1,53 +1,48 @@
 const path = require('path');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        use: [
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              minimizerOptions: {
-                plugins: [
-                  ['jpegtran', { progressive: true }],
-                  ['optipng', { optimizationLevel: 5 }],
-                ],
-              },
-            },
-          },
-        ],
-      },
-    ],
-  },
-  devtool: 'inline-source-map',
-  plugins: [
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 5 }],
-        ],
-      },
-    }),
-  ],
+	mode: 'development',
+	entry: './src/index.js',
+	output: {
+		filename: 'bundle.js',
+		path: path.resolve('./dist')
+	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
+			},
+			{
+				test: /\.(png|jpe?g|gif)$/i,
+				use: [
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							bypassOnDebug: true,
+							disable: true
+						},
+					},
+				],
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env', '@babel/preset-react']
+					}
+				}
+			}
+		]
+	},
+	devtool: 'inline-source-map',
+	devServer: {
+		static: path.resolve('./dist'),
+		compress: true,
+		port: 8564,
+	},
 };
