@@ -12,9 +12,10 @@ export default function Notification(props) {
         border: "none",
         right: "20px",
       }}
-      aria-label="close" onClick= {() => {
+      aria-label="close"
+      onClick= {() => {
         console.log('Close button has been clicked');
-      } }>
+      }}>
         <img src={close_icon} alt="close" height="15px" width="15px"></img>
       </button>
       <p>Here is the list of notifications</p>
