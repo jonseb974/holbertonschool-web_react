@@ -26,7 +26,7 @@ export default class App extends Component {
         }}>  Password:  </label>
 
         <input type="password" id="password"/>
-        <button>  OK </button>
+        <button style={{ marginLeft: '10px'}}>  OK </button>
       </body>
       <footer className='App-footer'>
         <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
