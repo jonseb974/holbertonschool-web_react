@@ -17,16 +17,16 @@ export default class App extends Component {
 
         <label htmlFor="email" onClick={() => {
           document.getElementById('password').focus();
-        }}>Email:</label>
+        }}>Email:  </label>
 
         <input type="email" id="email"/>
 
         <label htmlFor="password" onClick={() => {
           document.getElementById('password').focus();
-        }}>Password:</label>
+        }}>Password:  </label>
 
         <input type="password" id="password"/>
-        <button>OK</button>
+        <button>  OK</button>
       </body>
       <footer className='App-footer'>
         <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
