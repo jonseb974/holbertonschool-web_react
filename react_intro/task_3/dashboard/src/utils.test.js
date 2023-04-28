@@ -5,7 +5,7 @@ import { getFullYear, getFooterCopy, getLatestNotification } from './utils'
 
 // test to check getFullYear returns correct year
 test('getFullYear returns correct year', () => {
-	  expect(getFullYear()).toBe(2022);
+	  expect(getFullYear()).toBe(2023);
 });
 
 
@@ -26,5 +26,5 @@ test('getFooter returns correct string if true', () => {
 // test to check that getLatestNotification returns correct
 // html string
 test('getLatestNotification returns correct html string', () => {
-	  expect(getLatestNotification().__html).toBe('<strong>Urgent requirement</strong> - complete by EOD');
+	  expect(getLatestNotification().__html).toBe("<li data-priority='urgent'<strong>Urgent requirement</strong> - complete by EOD</li>");
 });
