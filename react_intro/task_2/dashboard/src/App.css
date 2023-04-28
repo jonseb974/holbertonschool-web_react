@@ -23,7 +23,7 @@
 }
 
 .App-body {
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   margin: 3rem;
   min-height: 50vh;
