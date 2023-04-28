@@ -9,7 +9,7 @@ function getFooterCopy(isIndex) {
 
 function getLatestNotification() {
       return {
-            __html: "<strong>Urgent requirement</strong> - complete by EOD"
+            __html: "<li data-priority='urgent'><strong>Urgent requirement</strong> - complete by EOD</li>"
       }
 }
 
