@@ -1,4 +1,5 @@
 const path = require('path');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -22,9 +23,31 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              minimizerOptions: {
+                plugins: [
+                  ['jpegtran', { progressive: true }],
+                  ['optipng', { optimizationLevel: 5 }],
+                ],
+              },
+            },
+          },
+        ],
       },
     ],
   },
   devtool: 'inline-source-map',
+  plugins: [
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+        ],
+      },
+    }),
+  ],
 };
-
