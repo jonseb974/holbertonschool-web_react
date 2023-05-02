@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer'
 export default class App extends Component {
 	render() {
 		return (
-			<React.Fragment>
+			<>
 				<Notifications />
 				<div className="App">
 					<Header />
@@ -18,7 +18,7 @@ export default class App extends Component {
 						<Footer />
 					</div>
 				</div>
-			</React.Fragment>
+			</>
 		)
 	}
 }  
