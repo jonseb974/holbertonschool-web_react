@@ -36,5 +36,7 @@
     ],
     "test-watch": "jest --watch"
   },
-  "devDependencies": { }
+  "devDependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.7.0"
+  }
 }
