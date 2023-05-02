@@ -36,8 +36,5 @@
     ],
     "test-watch": "jest --watch"
   },
-  "devDependencies": {
-    "babel-jest": "^23.6.0",
-    "jest": "^27.5.1"
-  }
+  "devDependencies": { }
 }
