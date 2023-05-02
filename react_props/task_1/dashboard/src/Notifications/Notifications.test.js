@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Notifications from '../Notifications/Notifications';
-import Adapter from 'enzyme-adapter-react-18';
 
 
 describe('<Notifications />', () => {

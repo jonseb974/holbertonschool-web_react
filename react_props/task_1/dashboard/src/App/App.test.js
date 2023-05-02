@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import App from './App';
-import Notifications from './Notifications/Notifications';
+import Notifications from '../Notifications/Notifications';
 import Login from '../Login/Login';
 
 
