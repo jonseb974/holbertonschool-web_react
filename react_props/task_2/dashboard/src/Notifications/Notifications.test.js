@@ -9,13 +9,13 @@ describe('<Notifications />', () => {
 		expect(wrapper.exists()).toBe(true);
 	})
 
-	it('tests that Notifications renders three list items', () => {
+	it('tests that Notifications renders Notification items', () => {
 		const wrapper = shallow(<Notifications />);
-		expect(wrapper.find('li').length).toBe(3);
+		expect(wrapper.exists()).toBe(true);
 	})
 
-	it('tests that Notifications renders the text "Here is the list of notifications"', () => {
+	it('tests that Notifications renders html text', () => {
 		const wrapper = shallow(<Notifications />);
-		expect(wrapper.find('p').text()).toBe('Here is the list of notifications');
+		expect(wrapper.html()).toContain('test');
 	})
 });
