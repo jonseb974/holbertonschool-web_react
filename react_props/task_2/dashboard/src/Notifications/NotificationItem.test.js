@@ -12,7 +12,7 @@ describe('<NotificationItem />', () => {
 
     it('Passes `type` prop and checks for correct html rendering', () => {
         const wrapper = shallow(<NotificationItem type="urgent" />);
-        expect(wrapper.html()).toContain('urgent');
+        expect(wrapper.html()).toContain("urgent");
     })
 
     it('Passes  `value` prop and checks for correct html rendering', () => {
