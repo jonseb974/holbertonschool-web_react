@@ -16,6 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-watch": "jest --watch",
+    "clear-cache": "npm cache clean --force",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
