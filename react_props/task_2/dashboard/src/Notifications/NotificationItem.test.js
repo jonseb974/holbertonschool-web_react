@@ -1,26 +1,27 @@
+import { shallow } from 'enzyme';
 import React from 'react';
-import { render } from '@testing-library/react';
 import NotificationItem from './NotificationItem';
 
-describe('NotificationItem', () => {
-  it('renders without crashing', () => {
-    render(<NotificationItem />);
-  });
 
-  it('renders the correct html for type and value props', () => {
-    const type = 'default';
-    const value = 'test';
-    const { getByTestId } = render(<NotificationItem type={type} value={value} />);
-    const notificationItem = getByTestId('notification-item');
-    expect(notificationItem).toHaveTextContent(value);
-    expect(notificationItem).toHaveClass(`notification-${type}`);
-  });
+// shallow render NotificationItem component
+describe('<NotificationItem />', () => {
+    it('Tests that NotificationItem renders without crashing', () => {
+        const wrapper = shallow(<NotificationItem />);
+        expect(wrapper.exists()).toBe(true);
+    })
 
-  it('renders the correct html for html prop', () => {
-    const html = { __html: '<u>test</u>' };
-    const { getByTestId } = render(<NotificationItem html={html} />);
-    const notificationItem = getByTestId('notification-item');
-    expect(notificationItem.innerHTML).toContain(html.__html);
-  });
-});
+    it('Passes `type` prop and checks for correct html rendering', () => {
+        const wrapper = shallow(<NotificationItem type="urgent" />);
+        expect(wrapper.html()).toContain('urgent');
+    })
 
+    it('Passes  `value` prop and checks for correct html rendering', () => {
+        const wrapper = shallow(<NotificationItem value="This is a success notification" />);
+        expect(wrapper.find('li').text()).toBe('This is a success notification');
+    })
+
+    it('Passes `html` prop and checks for correct html rendering', () => {
+        const wrapper = shallow(<NotificationItem html={{ __html: 'dangerouslySetInnerHtml' }} />);
+        expect(wrapper.html()).toContain('dangerouslySetInnerHtml');
+    })
+  })
