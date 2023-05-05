@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+//import { React } from 'react-dom/test-utils';
 import { getFullYear, getFooterCopy, getLatestNotification } from './utils'
 
 
