@@ -1,6 +1,5 @@
 module.exports = {
-  roots: ["<rootDir>/src"],
-  setupFiles: ["<rootDir>/src/setupTests.js"],
-  
+  roots: ["dashboard/src"],
+  setupFiles: ["dashboard/src/setupTests.js"],  
 };
 
