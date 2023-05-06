@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+//import { createRoot } from 'react-dom/client';
 import logo from './logo.jpg';
-//import './App.css';
+import './App.css';
 
-export default class App extends Component {
-  render() {
+
+function App () {
+  //render() {
     return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +19,9 @@ export default class App extends Component {
         <p>Copyright 2020 - holberton School</p>
       </footer>
     </div>
-    )
+    );
   }
-}  
+//}  
+
+export default App;
+// createRoot(document.getElementById('root')).render(<App />);
