@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import logo from './logo.jpg';
 import { getFullYear, getFooterCopy } from './utils'
 
 //import './App.css';
 
-export default class App extends Component {
-  render() {
+function App () {
+
     return (
     <div className="App">
       <header className="App-header">
@@ -32,6 +32,8 @@ export default class App extends Component {
         <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
       </footer>
     </div>
-    )
+    );
   }
-}  
+
+export function App();
+  
