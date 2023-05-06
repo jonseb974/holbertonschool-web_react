@@ -1,9 +1,10 @@
 import React from 'react'
+import { createRoot } from 'react-dom/client';
 import './Notifications.css'
 import close_icon from './close-icon.png'
 import { getLatestNotification } from './utils'
 
-export default function Notification(props) {
+function Notifications(props) {
   return (
     <div className="Notifications">
       <button style={{
@@ -25,5 +26,7 @@ export default function Notification(props) {
         <li dangerouslySetInnerHTML={getLatestNotification()}></li>
       </ul>
     </div>
-  )
+  );
 }
+
+export function Notifications();
