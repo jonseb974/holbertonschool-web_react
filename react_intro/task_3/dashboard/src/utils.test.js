@@ -21,8 +21,6 @@ test('getFooter returns correct string if true', () => {
 	expect(getFooterCopy(true)).toBe('Holberton School');
 });
 
-
-
 // test to check that getLatestNotification returns correct
 // html string
 test('getLatestNotification returns correct html string', () => {
