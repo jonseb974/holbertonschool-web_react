@@ -1,5 +1,4 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client';
+import React from 'react';
 import './Notifications.css'
 import close_icon from './close-icon.png'
 import { getLatestNotification } from './utils'
@@ -29,4 +28,4 @@ function Notifications(props) {
   );
 }
 
-export function Notifications();
+export default Notifications;

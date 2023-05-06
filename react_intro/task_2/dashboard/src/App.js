@@ -35,5 +35,5 @@ function App () {
     );
   }
 
-export function App();
+export default App;
   
