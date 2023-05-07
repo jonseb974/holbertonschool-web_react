@@ -7,11 +7,7 @@ module.exports = {
   },
   testMatch: ["**/__tests__/**/*.js?(x)", "**/?(*.)+(spec|test).js?(x)"],
   transform: {
-    "^.+\\.[jt]sx?$": "babel-jest",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy"
   },
-  transform: {
-    "^.+\\.jsx?$": "babel-jest"
-  }  
 };
 
