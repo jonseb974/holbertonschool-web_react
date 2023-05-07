@@ -14,6 +14,9 @@ module.exports = {
   },
   transform: {
     "^.+\\.jsx?$": "babel-jest"
-  }  
+  },
+  moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif)$": "<rootDir>/node_modules/jest-file-mock"
+  }
 };
 
