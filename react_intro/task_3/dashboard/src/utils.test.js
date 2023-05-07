@@ -1,6 +1,6 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { getFullYear, getFooterCopy, getLatestNotification } from './utils'
+import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
 
 // test to check getFullYear returns correct year
