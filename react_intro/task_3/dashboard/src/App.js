@@ -5,8 +5,7 @@ import { getFullYear, getFooterCopy } from './utils'
 
 //import './App.css';
 
-export default class App extends Component {
-  render() {
+function App () {
     return (
     <div className="App">
       <header className="App-header">
@@ -33,6 +32,9 @@ export default class App extends Component {
         <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
       </footer>
     </div>
-    )
+    );
   }
-}  
+export default function();
+
+
+
