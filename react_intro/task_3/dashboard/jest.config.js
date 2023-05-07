@@ -17,6 +17,10 @@ module.exports = {
   },
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif)$": "dashboard/node_modules/jest-file-mock"
+  },
+  moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif)$": "jest-file-mock"
   }
+  
 };
 
