@@ -10,3 +10,12 @@ import Enzyme from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
+
+module.exports = {
+    // other config options...
+    moduleNameMapper: {
+      "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
+  }
+  
