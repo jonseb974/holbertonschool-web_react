@@ -9,6 +9,9 @@ module.exports = {
   transform: {
     "^.+\\.[jt]sx?$": "babel-jest",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy"
-  }
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  }  
 };
 
