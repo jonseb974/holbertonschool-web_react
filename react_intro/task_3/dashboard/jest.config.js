@@ -3,7 +3,9 @@ module.exports = {
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   transform: {
     "^.+\\.jsx?$": "babel-jest",
-    "^.+\\.css$": "jest-css-modules"
+    "^.+\\.css$": "jest-css-modules",
+    "^.+\\.jpg$": "jest-transform-stub",
+    "^.+\\.css$": "identity-obj-proxy"
   },
   testMatch: ["**/__tests__/**/*.js?(x)", "**/?(*.)+(spec|test).js?(x)"],
   transform: {
