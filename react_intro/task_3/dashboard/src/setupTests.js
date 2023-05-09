@@ -15,7 +15,8 @@ module.exports = {
   // other config options...
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/__mocks__/fileMock.js",
-    "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js",
+    '\\.(jpg|jpeg|png|gif)$': 'jest-file-mock'
   }
 }
 
