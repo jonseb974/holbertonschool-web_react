@@ -5,11 +5,12 @@
 
 import '@testing-library/jest-dom';
 // setupTests.js
-
+//import Enzyme from 'enzyme';
+//import Adapter from '@wojtekmaj/enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
 
 module.exports = {
   // other config options...
