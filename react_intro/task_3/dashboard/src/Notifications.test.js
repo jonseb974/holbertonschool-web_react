@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import Notifications from './Notifications';
 
 
+Enzyme.configure({ adapter: new Adapter() })
+
 describe('<Notifications />', () => {
 	it('tests that Notifications renders without crashing', () => {
 		shallow(<Notifications />);
