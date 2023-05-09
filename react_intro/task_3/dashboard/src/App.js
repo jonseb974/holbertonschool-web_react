@@ -1,9 +1,9 @@
 //import React, { Component } from 'react'
 import React from 'react';
-import logo from './logo.jpg';
+//import logo from './logo.jpg';
 import { getFullYear, getFooterCopy } from './utils'
 
-import './App.css';
+//import './App.css';
 
 function App () {
     return (
