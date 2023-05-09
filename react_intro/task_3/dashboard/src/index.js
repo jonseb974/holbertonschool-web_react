@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import './App.css';
+//import './App.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import Notifications from './Notifications';
