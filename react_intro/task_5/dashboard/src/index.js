@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './App.css';
-import App from './App';
+import App from './App/App';
 import reportWebVitals from './reportWebVitals';
-import Notifications from './Notifications';
+import Notifications from './Notifications/Notifications';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
