@@ -29,7 +29,8 @@
     "jest-css-modules": "^2.1.0",
     "react-scripts": "^5.0.1",
     "webpack-cli": "^5.0.2",
-    "web-vital": "^1.0.0"
+    "web-vital": "^1.0.0",
+    "image-webpack-loader": "^7.0.1"
   },
   "dependencies": {
     "enzyme-adapter-react-16": "^1.15.7",
