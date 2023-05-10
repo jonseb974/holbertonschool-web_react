@@ -21,7 +21,9 @@ module.exports = {
   transform: {
     ...defaults.transform,
     '^.+\\.css$': 'jest-transform-css',
-    '\\.(css)$':'identity-obj-proxy'
   },
+  moduleNameMapper: {
+    '\\.(css)$':'identity-obj-proxy',
+  }
 };
 
