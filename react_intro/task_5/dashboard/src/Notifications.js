@@ -16,7 +16,7 @@ function Notifications(props) {
       onClick= {() => {
         console.log('Close button has been clicked');
       }}>
-        <img src={""} alt="" height="" width=""></img>
+        <img src={close_icon} alt="close" height="15px" width="15px"></img>
       </button>
       <p>Here is the list of notifications</p>
       <ul>
