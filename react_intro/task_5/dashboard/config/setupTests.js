@@ -3,14 +3,14 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 
-import '@testing-library/jest-dom';
-import 'identity-obj-proxy';
+
 
 // setupTests.js
 //import Enzyme from 'enzyme';
 //import Adapter from '@wojtekmaj/enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import 'identity-obj-proxy';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 
