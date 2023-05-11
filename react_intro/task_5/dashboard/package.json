@@ -41,7 +41,7 @@
   },
   "jest": {
     "setupFiles": [
-      "dashboard/config/setupTests.js"
+      "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
       "\\.(css)$": "dashboard/__mocks__/styleMock.js",
