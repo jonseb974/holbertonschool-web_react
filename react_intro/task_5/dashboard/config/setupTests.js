@@ -21,7 +21,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 module.exports = {
   moduleNameMapper: {
-    '\\.(css)$': 'dashboard/__mocks__/styleMock.js',
+    '\\.(css)$': '/home/bratak/holbertonschool-web_react/react_intro/task_5/dashboard/__mocks__/styleMock.js',
   },
 };
 
