@@ -41,11 +41,11 @@
   },
   "jest": {
     "setupFiles": [
-      "/home/bratak/holbertonschool-web_react/react_intro/task_5/dashboard/config/setupTests.js"
+      "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": " /home/bratak/holbertonschool-web_react/react_intro/task_5/dashboard/__mocks__/styleMock.js",
-      "\\.(jpg)$": "/home/bratak/holbertonschool-web_react/react_intro/task_5/dashboard/__mocks__/fileMock.js"
+      "\\.(css)$": " <rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg)$": "<rootDit>/__mocks__/fileMock.js"
     }
   }
 }
