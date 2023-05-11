@@ -19,7 +19,10 @@ Enzyme.configure({ adapter: new Adapter() });
 
 //const { defaults } = require('jest-config');
 
-//module.exports = {
+module.exports = {
+  moduleNameMapper: {
+    '\\.(css)$': '<rootDir>/__mocks__/styleMock.js',
+  },
 //  ...defaults,
 //  transform: {
 //    ...defaults.transform,
@@ -29,5 +32,5 @@ Enzyme.configure({ adapter: new Adapter() });
 //    '\\.(css)$':'identity-obj-proxy',
 //  },
 //  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-//};
+};
 
