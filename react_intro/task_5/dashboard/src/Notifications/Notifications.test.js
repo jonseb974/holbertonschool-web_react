@@ -5,7 +5,7 @@ import Notifications from './Notifications';
 import Adapter from 'enzyme-adapter-react-16';
 //import '@testing-library/jest-dom';
 //import expect from 'expect';
-import '@testing-library/jest-dom/extend-expect';
+//import '@testing-library/jest-dom/extend-expect';
 
 
 Enzyme.configure({ adapter: new Adapter() })
