@@ -23,14 +23,5 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css)$': 'dashboard/__mocks__/styleMock.js',
   },
-//  ...defaults,
-//  transform: {
-//    ...defaults.transform,
-//    '^.+\\.css$': 'jest-transform-css',
-//  },
-//  moduleNameMapper: {
-//    '\\.(css)$':'identity-obj-proxy',
-//  },
-//  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 };
 
