@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
     "build": "webpack --node production",
-    "test": "jest"
+    "test": "jest",
+    "clear-cache": "jest --clearCache"
   },
   "author": "",
   "license": "ISC",
