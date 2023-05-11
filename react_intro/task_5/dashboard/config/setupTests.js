@@ -21,7 +21,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 module.exports = {
   moduleNameMapper: {
-    '/\.(css)$/': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(css)$': 'dashboard/__mocks__/styleMock.js',
   },
 //  ...defaults,
 //  transform: {
