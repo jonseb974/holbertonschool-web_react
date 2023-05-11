@@ -44,8 +44,8 @@
       "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": "dashboard/__mocks__/styleMock.js",
-      "\\.(jpg)$": "dashboard/__mocks__/fileMock.js"
+      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   }
 }
