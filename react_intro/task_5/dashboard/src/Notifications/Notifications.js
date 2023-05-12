@@ -3,7 +3,7 @@ import './Notifications.css'
 //import close_icon from './close-icon.png'
 import { getLatestNotification } from '../utils/utils'
 
-function Notifications(props) {
+function Notifications() {
   return (
     <div className="Notifications">
       <button style={{
