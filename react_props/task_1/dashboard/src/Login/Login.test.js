@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Enzyme from 'enzyme';
-import Login from './Login.test.js';
+import Login from './Login';
 import Adapter from 'enzyme-adapter-react-16';
 //import '@testing-library/jest-dom';
 //import expect from 'expect';
