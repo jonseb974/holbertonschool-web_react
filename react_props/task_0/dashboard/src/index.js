@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import './App/App.css';
 import App from './App/App';
-import Notifications from './Notifications/Notifications';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +12,7 @@ root.render(
   </React.StrictMode>  
 );
 
-const notifications = ReactDOM.createRoot(document.getElementById('root-notifications'));
+const notifications = ReactDOM.createRoot(document.getElementById());
 notifications.render(
   <React.StrictMode>
     <Notifications />
