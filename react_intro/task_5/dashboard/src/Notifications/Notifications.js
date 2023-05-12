@@ -22,7 +22,7 @@ function Notifications(props) {
       <ul>
         <li data-priority="default">New course available</li>
         <li data-priority="urgent">New resume available</li>
-        <li dangerouslySetInnerHTML={getLatestNotification()}></li>
+        <li data-priority="urgent"dangerouslySetInnerHTML={{__html: getLatestNotification()}}></li>
       </ul>
     </div>
   )
