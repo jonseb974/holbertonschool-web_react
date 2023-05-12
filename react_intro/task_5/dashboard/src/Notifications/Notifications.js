@@ -11,13 +11,13 @@ function Notifications(props) {
         background: "transparent",
         border: "none",
         right: "20px",
+        cursor:'pointer'
       }}
       aria-label="close"
       onClick= {() => {
-        console.log('Close button has been clicked');
-      }}>
-        <img src={close_icon} alt="close" height="15px" width="15px"></img>
-      </button>
+        console.log('Close button has been clicked\n');
+      }}
+      >z</button>
       <p>Here is the list of notifications</p>
       <ul>
         <li data-priority="default">New course available</li>
