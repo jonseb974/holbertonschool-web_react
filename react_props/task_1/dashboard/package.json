@@ -192,7 +192,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --config config/webpack.config.js",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "clear-cache": "jest --clearCache"
   },
   "author": "",
   "license": "ISC"
