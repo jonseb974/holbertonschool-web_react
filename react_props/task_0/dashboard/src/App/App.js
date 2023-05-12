@@ -1,18 +1,23 @@
-//import React, { Component } from 'react'
+// import React, { Component } from 'react'
 import React from 'react';
 //import logo from './logo.jpg';
-import { getFullYear, getFooterCopy } from '../utils/utils'
-
+import { getFullYear, getFooterCopy } from '../utils/utils';
+import Notifications from './Notifications/Notifications';
+import Login from './Login/Login';
+import Footer from './Footer/Footer';
+import Header from './Heder/Header';
 //import './App.css';
 
 function App () {
     return (
+    <>
+      <Notifications />
     <div className="App">
-      <header className="App-header">
+      <Header />
         <img src="" className="" alt="" />
         <h1>School dashboard</h1>
-      </header>
       <body className='App-body'>
+        <Login />
         <p>Login to access the full dashboard</p>
 
         <label htmlFor="email" onClick={() => {
@@ -29,9 +34,11 @@ function App () {
         <button style={{ marginLeft: '10px'}}>  OK </button>
       </body>
       <footer className='App-footer'>
+        <Footer />
         <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
       </footer>
     </div>
+    </>
     );
   }
 export default App;
