@@ -2,10 +2,10 @@
 import React from 'react';
 //import logo from './logo.jpg';
 import { getFullYear, getFooterCopy } from '../utils/utils';
-import Notifications from './Notifications/Notifications';
-import Login from './Login/Login';
-import Footer from './Footer/Footer';
-import Header from './Heder/Header';
+import Notifications from '../Notifications/Notifications';
+import Login from '../Login/Login';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 //import './App.css';
 
 function App () {
