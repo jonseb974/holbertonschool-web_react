@@ -16,7 +16,7 @@ describe('<App />', () => {
 
 	it('Tests that App renders a <div> with class "App-header"', () => {
 		const wrapper = shallow(<App />);
-		expect(wrapper.find('.App-header').length).toBe(1);
+		expect(wrapper.find('Header').length).toBe(1);
 	})
 
 	it('Tests that App renders a <div> with class "App-body"', () => {
