@@ -5,11 +5,9 @@ import './App/App.css';
 import App from './App/App';
 import Notifications from './Notifications/Notifications';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="root">
-      <Notifications />
-    </div>
+    <Notifications />
     <App />
   </React.StrictMode>  
 );
