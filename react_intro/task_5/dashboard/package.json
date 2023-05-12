@@ -44,7 +44,7 @@
     ],
     "moduleNameMapper": {
       "\\.(css)$": " <rootDir>/__mocks__/styleMock.js",
-      "\\.(jpg)$": "<rootDit>/__mocks__/fileMock.js"
+      "\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   }
 }
