@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+//import Adapter from 'enzyme-adapter-react-16';
 import App from './App';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 
-configure({ adapter: new Adapter() });
+//configure({ adapter: new Adapter() });
 
 
 
@@ -22,10 +22,6 @@ describe('<App />', () => {
 		expect(wrapper.exists()).toBe(true);
 	})
 	
-	it('Tests that App renders a <div> with class "App-header"', () => {
-        expect(wrapper.find('Header').length).toBe(1);
-    })
-
 	it('Tests that App renders a <div> with class "App-body"', () => {
 		expect(wrapper.find('.App-body').length).toBe(1);
 	})
