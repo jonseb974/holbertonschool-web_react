@@ -17,7 +17,7 @@ function Notifications() {
       onClick= {() => {
         console.log('Close button has been clicked\n');
       }}
-      >z</button>
+      >x</button>
       <p>Here is the list of notifications</p>
       <ul>
         <li data-priority="default">New course available</li>
