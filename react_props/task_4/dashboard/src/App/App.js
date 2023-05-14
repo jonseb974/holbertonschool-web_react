@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import React from 'react';
 import Notifications from '../Notifications/Notifications';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import '../App/App';
 import PropTypes from 'prop-types';
 
 const App = ({ isLoggedIn }) => {
