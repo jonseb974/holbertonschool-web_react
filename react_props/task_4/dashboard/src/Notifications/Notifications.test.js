@@ -3,13 +3,8 @@ import { shallow } from 'enzyme';
 import Enzyme from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
-//import Adapter from 'enzyme-adapter-react-16';
-//import '@testing-library/jest-dom';
-//import expect from 'expect';
-//import '@testing-library/jest-dom/extend-expect';
+import PropTypes from 'prop-types';
 
-
-//Enzyme.configure({ adapter: new Adapter() })
 
 describe('<Notifications />', () => {
 	it('tests that Notifications renders without crashing', () => {

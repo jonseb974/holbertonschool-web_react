@@ -42,7 +42,7 @@ const Notification = ({ displayDrawer }) => {
 };
 
 Notification.propTypes = {
-  displayDrawer: PropTypes.bool.isRequired,
+  displayDrawer: propTypes.bool.isRequired,
 };
 
-export default Notifications;
+export default Notification;
