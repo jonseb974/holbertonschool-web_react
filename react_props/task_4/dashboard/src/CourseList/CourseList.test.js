@@ -2,16 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CourseList from './CourseListRow';
 
-test('renders CourseList component without crashing', () => {
-  render(<CourseList />);
-});
+describe('<CourseList />', () => {
+  it(`Renders CourseList component without crashing`, () => {
+      const wrapper = shallow(<CourseList />);
+      expect(wrapper.exists()).toBe(true);
+  })
 
-test('renders the 5 different rows', () => {
-  const { getByText } = render(<CourseList />);
-
-  expect(getByText('Available courses')).toBeInTheDocument();
-  expect(getByText('Course name')).toBeInTheDocument();
-  expect(getByText('ES6')).toBeInTheDocument();
-  expect(getByText('Webpack')).toBeInTheDocument();
-  expect(getByText('React')).toBeInTheDocument();
-});
+  it(`Renders 5 CourseListRow components`, () => {
+      const wrapper = shallow(<CourseList />);
+      expect(wrapper.find('CourseListRow').length).toBe(5);
+  })
+})
