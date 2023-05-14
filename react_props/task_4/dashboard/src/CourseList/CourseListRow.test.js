@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render } from '@testing-library/react';
 import CourseListRow from './CourseListRow';
 
 
@@ -10,7 +9,7 @@ describe('<CourseListRow />', () => {
         textSecondCell does not exist`, () => {
         const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" />);
         expect(wrapper.find('th').exists()).toBe(true);
-        expect(wrapper.find('th').prop('colSpan')).toBe(2);
+        expect(wrapper.find('th').prop('colSpan')).toEqual(2);
     });
 
     it(`When isHeader is true, renders two cells when textSecondCell is present`, () => {
