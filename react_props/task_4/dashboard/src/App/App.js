@@ -5,39 +5,29 @@ import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import '../App/App';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function App () {
-    return (
-    <>
-      <Notifications />
-    <div className="App">
-      <Header />
-        <img src="" className="" alt="" />
-        <h1>School dashboard</h1>
-      <body className='App-body'>
-        <Login />
-        <p>Login to access the full dashboard</p>
-
-        <label htmlFor="email" onClick={() => {
-          document.getElementById('password').focus();
-        }}>Email:  </label>
-
-        <input type="email" id="email"/>
-
-        <label htmlFor="password" onClick={() => {
-          document.getElementById('password').focus();
-        }}>  Password:  </label>
-
-        <input type="password" id="password"/>
-        <button style={{ marginLeft: '10px'}}>  OK </button>
-      </body>
-      <footer className='App-footer'>
-        <Footer />
-        <p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
-      </footer>
+const App = ({ isLoggedIn }) => {
+  return ( 
+  <div className="App">
+    <Notifications />
+    <Header />
+    <div className='App-body'>
+      {isLoggedIn ? <CourseList /> : <Login />}
     </div>
-    </>
-    );
-  }
+    <div className='App-footer'>
+      <Footer />
+    </div>   
+  </div>
+  );
+};
+
+App.defaultProps = {
+  isLoggedIn: false,
+};
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
+};
+
 export default App;
