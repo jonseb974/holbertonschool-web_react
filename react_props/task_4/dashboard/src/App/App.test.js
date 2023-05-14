@@ -1,14 +1,11 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-//import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import App from './App';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
-
-//configure({ adapter: new Adapter() });
-
+import CourseList from '../CourseList/CourseList';
 
 
 describe('<App />', () => {
@@ -43,5 +40,23 @@ describe('<App />', () => {
 	
 	it('contain the Footer component', () => {
 		expect(wrapper.contains(<Footer />)).toBe(true);
+	});
+
+	it('does not contain the CourseList component when isLoggedIn is false', () => {
+		expect(wrapper.contains(<CourseList />)).toBe(false);
+	});
+	
+	describe('when isLoggedIn is true', () => {
+		beforeEach(() => {
+			wrapper.setProps({ isLoggedIn: true });
+		});
+		
+		it('does not contain the Login component', () => {
+			expect(wrapper.contains(<Login />)).toBe(false);
+		});
+		
+		it('contains the CourseList component', () => {
+			expect(wrapper.contains(<CourseList />)).toBe(true);
+		});
 	});
 });
