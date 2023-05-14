@@ -1,12 +1,11 @@
-// import React, { Component } from 'react'
+import React, { Component } from 'react'
 import React from 'react';
-//import logo from './logo.jpg';
-import { getFullYear, getFooterCopy } from '../utils/utils';
 import Notifications from '../Notifications/Notifications';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import '../App/App';
+import propTypes from 'prop-types';
 
 function App () {
     return (
