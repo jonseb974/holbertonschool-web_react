@@ -4,6 +4,7 @@ import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import PropTypes from 'prop-types';
+import CourseList from '../CourseList/CourseList';
 
 const App = ({ isLoggedIn }) => {
   return ( 
