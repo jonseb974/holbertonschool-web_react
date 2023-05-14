@@ -1,10 +1,21 @@
-import React from 'react'
-import './Notifications.css'
-//import close_icon from './close-icon.png'
-import { getLatestNotification } from '../utils/utils'
+import React from 'react';
+import './Notifications.css';
+import NotificationItem from './NotificationItem';
+import { getLatestNotification } from '../utils/utils';
+import propTypes from 'prop-types';
 
-function Notifications() {
+
+const Notification = ({ displayDrawer }) => {
+  const closeNotification = () => {
+    console.log('Close button has been clicked');
+  };
+
   return (
+  <>
+    <div className="menuItem">
+      <p>Your notifications</p>
+    </div>
+    {displayDrawer && (
     <div className="Notifications">
       <button style={{
         position: "absolute",
@@ -20,12 +31,18 @@ function Notifications() {
       >x</button>
       <p>Here is the list of notifications</p>
       <ul>
-        <li data-priority="urgent">New course available</li>
-        <li data-priority="urgent">New resume available</li>
-        <li data-priority="urgent"dangerouslySetInnerHTML={{__html: getLatestNotification()}}></li>
+        <NotificationItem type="urgent" value="New course available" />
+        <NotificationItem type="urgent" value="New resume available" />
+        <NotificationItem type="urgent" html={{ __html: getLatestNotification() }} />
       </ul>
     </div>
-  )
-}
+    )}
+    </>
+  );
+};
+
+Notification.propTypes = {
+  displayDrawer: PropTypes.bool.isRequired,
+};
 
 export default Notifications;
