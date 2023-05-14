@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 describe('<Notifications />', () => {
 	it('tests that Notifications renders without crashing', () => {
-		shallow(<Notifications />);
+		shallow(<NotificationItem />);
 	})
 
 	it('Passes dummy `type` prop and checks for correct HTML rendering', () => {
@@ -17,7 +17,7 @@ describe('<Notifications />', () => {
 	});
 
 	it('tests `value`that check renders HTML items', () => {
-		const wrapper = shallow(<Notifications type="default" value="test" />);
+		const wrapper = shallow(<NotificationItem type="default" value="test" />);
 		expect(wrapper.find('li').text()).toBe('test');
 	})
 

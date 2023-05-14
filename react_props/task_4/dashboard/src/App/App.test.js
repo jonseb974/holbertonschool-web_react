@@ -5,7 +5,7 @@ import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
-import CourseList from '../CourseList/CourseList';
+import CourseList from '../CourseList/CourseListRow';
 import PropTypes from 'prop-types';
 
 
