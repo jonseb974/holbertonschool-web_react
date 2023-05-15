@@ -33,7 +33,7 @@ const Notification = ({ displayDrawer }) => {
       <ul>
         <NotificationItem type="urgent" value="New course available" />
         <NotificationItem type="urgent" value="New resume available" />
-        <NotificationItem type="urgent" html={{ __html: getLatestNotification() }} />
+        <NotificationItem type="urgent" html={getLatestNotification().__html} />
       </ul>
     </div>
     )}
