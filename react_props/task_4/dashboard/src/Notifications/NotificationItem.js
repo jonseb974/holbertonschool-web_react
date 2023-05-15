@@ -8,12 +8,16 @@ const NotificationItem = ({ type, html, value }) => {
     'data-notification-type': type,
   };
     
-    if (html) liProps.dangerouslySetInnerHTML= html;
-    return (
-      <li {...liProps}>{value}</li>   
-    );
-  }
-
-
+    if (html) {
+      liProps.dangerouslySetInnerHTML= { __html: html };
+    }
+    return <li {...liProps}>{value}</li>;   
+  };
+  
+  NotificationItem.propTypes = {
+    type: PropTypes.string.isRequired,
+    html: PropTypes.string,
+    value: PropTypes.string.isRequired,
+  };
   
   export default NotificationItem;
