@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
-import CourseListRow from '../CourseList/CourseListRow';
+
 
 import PropTypes from 'prop-types';
 
@@ -31,7 +31,7 @@ describe('<App />', () => {
 		expect(wrapper.find('.App-footer').length).toBe(1);
 	})
 	it('contain the Notifications component', () => {
-		expect(wrapper.contains(<Notifications />)).toBe(true);
+		expect(wrapper.contains(<Notifications displayDrawer={true} />)).toBe(true);
 	});
 	
 	it('contain the Header component', () => {
