@@ -1,6 +1,6 @@
-import React from 'react'
-import './Notifications.css'
-//import { getLatestNotification } from '../utils/utils'
+import React from 'react';
+import './Notifications.css';
+import { getLatestNotification } from '../utils/utils';
 import PropTypes from 'prop-types';
 
 const NotificationItem = ({ type, html, value }) => {
