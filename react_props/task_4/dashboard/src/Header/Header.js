@@ -1,6 +1,6 @@
 //import React, { Component } from 'react'
 import React from 'react';
-//import logo from './logo.jpg';
+import logo from '../assets/logo.jpg';
 import { getFullYear, getFooterCopy } from '../utils/utils'
 
 //import './App.css';
@@ -9,7 +9,7 @@ function App () {
     return (
     <div className="App">
       <header className="App-header">
-        <img src="" className="" alt="" />
+        <img src={logo} className="App-logo" alt="logo" />
         <h1>School dashboard</h1>
       </header>
       <body className='App-body'>
