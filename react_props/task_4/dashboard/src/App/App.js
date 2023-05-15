@@ -5,12 +5,11 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
-import CourseListRow from '../CourseList/CourseListRow';
 
 const App = ({ isLoggedIn }) => {
   return ( 
   <div className="App">
-    <Notifications />
+    <Notifications displayDrawer={true} />
     <Header />
     <div className='App-body'>
       {isLoggedIn ? <CourseList /> : <Login />}
