@@ -41,6 +41,10 @@ const Notification = ({ displayDrawer }) => {
   );
 };
 
+Notification.defaultProps = {
+  displayDrawer: false
+}
+
 Notification.propTypes = {
   displayDrawer: propTypes.bool.isRequired,
 };
