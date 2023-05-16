@@ -1,7 +1,7 @@
 import PropTypes from 'prop-Types';
 
 
-const CourseShape = propTypes.shape({
+const CourseShape = PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     credits: PropTypes.number.isRequired,
