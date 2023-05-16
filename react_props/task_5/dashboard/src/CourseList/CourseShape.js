@@ -1,4 +1,4 @@
-import PropTypes from 'prop-Types';
+import PropTypes from 'prop-types';
 
 
 const CourseShape = PropTypes.shape({
