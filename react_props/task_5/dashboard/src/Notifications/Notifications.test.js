@@ -40,7 +40,7 @@ describe('<Notifications />', () => {
 
 	it('tests passing empty array', () => {
 		const wrapper = shallow(<Notifications listNotifications={[]} />);
-		expect(wrapper.find(NotificationItem).exist()).toBe(false);
+		expect(wrapper.find(NotificationItem).exists()).toBe(false);
 	});
 
 	it('tests when not passing listNotifications prop', () => {
