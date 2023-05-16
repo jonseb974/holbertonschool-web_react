@@ -18,9 +18,9 @@ describe('NotificationItem component tests', () => {
     });
   
     it('renders correct HTML with html prop', () => {
-      const wrapper = shallow(<NotificationItem  html={{ __html: '<u>test</u>' }}/>);
+      const wrapper = shallow(<NotificationItem  html='<u>test</u>' />);
       const liItem = wrapper.find('li');
       expect(liItem).toHaveLength(1);
-      expect(liItem.html()).toEqual('<li><u>test</u></li>');
+      expect(liItem.html().toString()).toEqual('<li><u>test</u></li>');
     });
   });
