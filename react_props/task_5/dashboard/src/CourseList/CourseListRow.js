@@ -36,7 +36,7 @@ CourseListRow.propTypes = {
     textFirstCell: propTypes.string.isRequired,
     textSecondCell: propTypes.oneOfType([
         propTypes.string,
-        //propTypes.number,
+        propTypes.number,
     ])
 }
 
