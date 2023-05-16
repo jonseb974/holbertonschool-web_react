@@ -3,7 +3,7 @@ import './Notifications.css'
 import NotificationItem from './NotificationItem'
 import { getLatestNotification } from '../utils/utils'
 import NotificationItemShape from './NotificationItemShape'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 
 const Notifications = ({ displayDrawer, listNotifications }) => {
@@ -55,8 +55,8 @@ Notifications.defaultProps = {
 }
 
 Notifications.propTypes = {
-  displayDrawer: propTypes.bool.isRequired,
-  listNotifications: propTypes.arrayOf(NotificationItem.propTypes),
+  displayDrawer: PropTypes.bool.isRequired,
+  listNotifications: PropTypes.arrayOf(NotificationItem.propTypes),
 };
 
 export default Notifications;
