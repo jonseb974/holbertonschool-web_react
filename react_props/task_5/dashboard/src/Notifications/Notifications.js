@@ -1,15 +1,12 @@
-import React from 'react';
-import './Notifications.css';
-import NotificationItem from './NotificationItem';
-import { getLatestNotification } from '../utils/utils';
-import propTypes from 'prop-types';
+import React from 'react'
+import './Notifications.css'
+import NotificationItem from './NotificationItem'
+import { getLatestNotification } from '../utils/utils'
+import NotificationItemShape from './NotificationItemShape'
+import propTypes from 'prop-types'
 
 
-const Notification = ({ displayDrawer }) => {
-  const closeNotification = () => {
-    console.log('Close button has been clicked');
-  };
-
+const Notifications = ({ displayDrawer, listNotifications }) => {
   return (
   <>
     <div className="menuItem">
@@ -31,9 +28,21 @@ const Notification = ({ displayDrawer }) => {
       >x</button>
       <p>Here is the list of notifications</p>
       <ul>
-        <NotificationItem type="default" value="New course available" />
-        <NotificationItem type="urgent" value="New resume available" />
-        <NotificationItem type="urgent" html={getLatestNotification().__html} />
+        {listNotifications.length === 0 ? (
+          <li>
+            <p>No notification available yet</p>
+          </li>
+        ): (
+          listNotifications.map((notification) => (
+            <NotificationItem
+            key={notification.id}
+            id={notification.id}
+            html={notification.html} 
+            type={notification.type}
+            value={notification.value} 
+            />
+          ))
+        )}
       </ul>
     </div>
     )}
@@ -41,12 +50,13 @@ const Notification = ({ displayDrawer }) => {
   );
 };
 
-Notification.defaultProps = {
+Notifications.defaultProps = {
   displayDrawer: false
 }
 
-Notification.propTypes = {
+Notifications.propTypes = {
   displayDrawer: propTypes.bool.isRequired,
+  listNotifications: propTypes.arrayOf(NotificationItem.propTypes),
 };
 
-export default Notification;
+export default Notifications;
