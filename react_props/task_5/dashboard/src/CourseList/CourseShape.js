@@ -1,10 +1,10 @@
-import propTypes from 'prop-Types'
+import PropTypes from 'prop-Types';
 
 
 const CourseShape = propTypes.shape({
-    id: propTypes.number.isRequired,
-    name: propTypes.string.isRequired,
-    credits: propTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    credits: PropTypes.number.isRequired,
 })
 
 export default CourseShape;
