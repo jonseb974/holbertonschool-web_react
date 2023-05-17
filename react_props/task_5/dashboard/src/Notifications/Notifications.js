@@ -30,7 +30,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
       <ul>
         {listNotifications.length === 0 ? (
           <li>
-            <p>No notification available yet</p>
+            <p>No new notification for now </p>
           </li>
         ) : (
           listNotifications.map((notification) => (
