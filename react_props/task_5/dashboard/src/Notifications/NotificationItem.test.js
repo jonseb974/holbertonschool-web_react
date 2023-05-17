@@ -1,26 +1,30 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 //import { render } from '@testing-library/react';
 import NotificationItem from './NotificationItem';
 
+configure({ adapter: new Adapter() });
+
+
 describe('NotificationItem component tests', () => {
-    it('Test if renders without crashing', () => {
-      const wrapper = shallow(<NotificationItem type="default"/>);
-      expect(wrapper.exists()).toBe(true);
-    });
-  
-    it('renders correct HTML with type and value props', () => {
-      const wrapper = shallow(<NotificationItem type="default" value="test" />);
-      const liItem = wrapper.find('li');
-      expect(liItem).toHaveLength(1);
-      expect(liItem.prop('data-notification-type')).toEqual('default');
-      expect(liItem.text()).toEqual('test');
-    });
-  
-    it('renders correct HTML with html prop', () => {
-      const wrapper = shallow(<NotificationItem  html='<u>test</u>' />);
-      const liItem = wrapper.find('li');
-      expect(liItem).toHaveLength(1);
-      expect(liItem.html().toString()).toEqual('<li><u>test</u></li>');
-    });
+  it('Test if renders without crashing', () => {
+    const wrapper = shallow(<NotificationItem type="default" value="test" />);
+    expect(wrapper.exists()).toBe(true);
   });
+
+  it('renders correct HTML with type and value props', () => {
+    const wrapper = shallow(<NotificationItem type="default" value="test" />);
+    const liItem = wrapper.find('li');
+    expect(liItem).toHaveLength(1);
+    expect(liItem.prop('data-notification-type')).toEqual('default');
+    expect(liItem.text()).toEqual('test');
+  });
+
+  it('renders correct HTML with html prop', () => {
+    const wrapper = shallow(<NotificationItem html='<u>test</u>' />);
+    const liItem = wrapper.find('li');
+    expect(liItem).toHaveLength(1);
+    expect(liItem.html().toString()).toEqual('<li><u>test</u></li>');
+  });
+});
