@@ -32,7 +32,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
           <li>
             <p>No notification available yet</p>
           </li>
-        ): (
+        ) : (
           listNotifications.map((notification) => (
             <NotificationItem
             key={notification.id}
