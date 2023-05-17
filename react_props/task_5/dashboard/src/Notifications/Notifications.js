@@ -56,8 +56,9 @@ Notifications.defaultProps = {
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool.isRequired,
-  //listNotifications: PropTypes.arrayOf(PropTypes.string).isRequired,
-  listNotifications: PropTypes.arrayOf(NotificationItem.propTypes),
+  //listNotifications: PropTypes.arrayOf(PropTypes.string).isRequired
+  listNotifications: PropTypes.arrayOf(PropTypes.string),
+  //listNotifications: PropTypes.arrayOf(NotificationItem.propTypes),
 };
 
 export default Notifications;
