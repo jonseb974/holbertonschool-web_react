@@ -27,7 +27,7 @@ const CourseList = ({ listCourses }) => {
 };
 
 CourseList.defaultProps = {
-  listCourse: []
+  listCourses: []
 };
 
 CourseList.propTypes = {
