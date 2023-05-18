@@ -7,16 +7,14 @@ import './CourseList.css';
 
 const CourseList = ({ listCourses }) => {
   return (
-    <table id="CourseList">
+    <table id={"CourseList"}>
       <thead>
-        <CourseListRow isHeader={true} textFirstCell="Available courses"  />
-        <CourseListRow isHeader={true} textFirstCell="Course name" textSecondCell="Credit" />
+        <CourseListRow isHeader={true} textFirstCell={"Available courses"} />
+        <CourseListRow isHeader={true} textFirstCell={"Course name"} textSecondCell={"Credit"} />
       </thead>
       <tbody id="CourseBody">
         {listCourses.length ===0 && (
-          <tr>
-            <td>No courses available yet</td>
-          </tr>
+            <CourseListRow textFirstCell={"No courses available yet"} />
         )}
         {listCourses.map(course => (
           <CourseListRow key={course.id} textFirstCell={course.name} textSecondCell={course.credit} />
@@ -31,7 +29,7 @@ CourseList.defaultProps = {
 };
 
 CourseList.propTypes = {
-  listCourses: propTypes.array.isRequired
+  listCourses: propTypes.arrayOf(CourseShape),
 };
 
 export default CourseList;
