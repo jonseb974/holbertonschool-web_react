@@ -1,5 +1,4 @@
-table {
-    display: table;
+#CourseLis {
     border: 1px solid;
     border-collapse: collapse;
     margin-left: auto;
@@ -16,4 +15,9 @@ th[colSpan="2"] {
     text-align: center;
     border: 1px solid;
     padding-bottom: 1rem;
+}
+
+td {
+    padding: .2rem .5em;
+    text-align: left;
 }
