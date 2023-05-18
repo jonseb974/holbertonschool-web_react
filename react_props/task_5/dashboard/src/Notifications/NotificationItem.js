@@ -9,15 +9,19 @@ const NotificationItem = ({ type, html, value }) => {
   };
     
     if (html) {
-      liProps.dangerouslySetInnerHTML= { __html: html };
+      liProps.dangerouslySetInnerHTML=  html;
     }
     return <li {...liProps}>{value}</li>;   
   };
   
   NotificationItem.propTypes = {
-    type: PropTypes.string.isRequired,
-    html: PropTypes.string,
+    type: PropTypes.string,
+    html: PropTypes.shape({ __html: PropTypes.string, }),
     value: PropTypes.string.isRequired,
   };
-  
-  export default NotificationItem;
+
+  NotificationItem.defaultProps = {
+    type: 'default',
+  };
+
+export default NotificationItem;
