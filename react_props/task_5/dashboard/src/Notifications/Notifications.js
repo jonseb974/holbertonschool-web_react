@@ -29,9 +29,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
       <p>Here is the list of notifications</p>
       <ul>
         {listNotifications.length === 0 ? (
-          <li>
             <p>No new notification for now </p>
-          </li>
         ) : (
           listNotifications.map((notification) => (
             <NotificationItem
@@ -58,8 +56,9 @@ Notifications.propTypes = {
   //displayDrawer: PropTypes.bool
   displayDrawer: PropTypes.bool.isRequired,
   //0listNotifications: PropTypes.arrayOf(PropTypes.string).isRequired
-  listNotifications: PropTypes.arrayOf(PropTypes.string),
+  //listNotifications: PropTypes.arrayOf(PropTypes.string),
   //listNotifications: PropTypes.arrayOf(NotificationItem.propTypes),
+  listNotifications: PropTypes.arrayOf(NotificationItemShape),
 };
 
 export default Notifications;
