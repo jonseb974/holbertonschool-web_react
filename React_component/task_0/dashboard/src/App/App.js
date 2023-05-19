@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     const { isLoggedIn } = this.props;
 
