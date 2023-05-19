@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+//import Adapter from 'enzyme-adapter-react-16';
 //import { render } from '@testing-library/react';
 import NotificationItem from './NotificationItem';
 
-configure({ adapter: new Adapter() });
+//configure({ adapter: new Adapter() });
 
 
 describe('NotificationItem component tests', () => {
