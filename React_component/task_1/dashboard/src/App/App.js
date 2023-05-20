@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 import { render, fireEvent } from '@testing-library/react';
 import { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-18';
+import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
