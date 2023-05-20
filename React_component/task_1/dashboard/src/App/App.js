@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Enzyme from 'enzyme';
 import Notifications from '../Notifications/Notifications';
 import { getLatestNotification } from '../utils/utils';
 import Login from '../Login/Login';
@@ -6,8 +7,11 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
-//import Notifications from './Notifications/Notifications';
 import { render, fireEvent } from '@testing-library/react';
+import { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-18';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 
 
