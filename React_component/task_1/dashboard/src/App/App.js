@@ -7,6 +7,8 @@ import Header from '../Header/Header';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
+import { render, fireEvent } from '@testing-library/react';
+
 
 
 class App extends Component {
