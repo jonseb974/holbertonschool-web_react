@@ -10,7 +10,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import PropTypes from 'prop-types';
-import { beforeEach } from 'node:test';
 
 
 
@@ -55,8 +54,9 @@ describe('<App />', () => {
 });
 
 describe('when isLoggedIn is true', () => {
+	let wrapper;
 	beforeEach(() => {
-		wrapper.setProps({ isLoggedIn: true });
+		wrapper = shallow(<App isLoggedIn={false} />);
 	});
 	
 	it('does not contain the Login component', () => {
