@@ -9,6 +9,18 @@ import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
 
 class App extends React.Component {
+  componentDidMount() {
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'h') {
+        alert('Logging you out')
+        this.props.logOut()
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', (e) => {});
+  }
   render() {
     const { isLoggedIn } = this.props;
 
