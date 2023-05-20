@@ -44,6 +44,7 @@
     "web-vitals": "^3.3.1"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
     ],
