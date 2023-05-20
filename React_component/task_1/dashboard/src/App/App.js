@@ -8,7 +8,21 @@ import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
 
+
 class App extends Component {
+  componentDidMount() {
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'h') {
+        alert('Logging you out')
+        this.props.logOut()
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', (e) => {});
+  }
+  
   render() {
     const { isLoggedIn } = this.props;
 
@@ -41,10 +55,14 @@ return (
 
 App.defaultProps = {
   isLoggedIn: false,
+  logOut: () => {}
 };
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
 };
+
+
 
 export default App;
