@@ -62,34 +62,25 @@ describe('<App />', () => {
 		it('contains the CourseList component', () => {
 			expect(wrapper.contains(<CourseList />)).toBe(true);
 		});
-	});
-});
 
-describe('<App />', () => {
-	let wrapper;
-	let logOutMock;
-	let alertMock;
+		//new tests
 
-	beforeEach(() => {
-		logOutMock = jest.fn();
-		alertMock = jest.spyOn(window, 'alert');
-
-		wrapper = shallow(<App logOut={logOutMock} />);
-	});
-
-	afterEach(() => {
-		alertMock.mockClear();
-	});
-
-	it('Calls logOut function, shows alert when Control and h keys are pressed', () => {
-		const event = new KeyboardEvent('keydown', {
-			key: 'h',
-			ctrlKet: true,
+		it('When ctrl & h are pressed this alert is call', () => {
+			const AlertSpy = jest.spyOn(window, 'alert');
+			const wrapper = mount(<App isLoggedIn />);
+			wrapper.instance().keyDownHandler({ keycode: 72, ctrlKey: true });
+			expect(AlertSpy).toHaveBeenCallWidth('Logging you out');
+			wrapper.unmount();
 		});
 
-		mount(<div>{wrapper}</div>).getDOMNode().dispatchEvent(event);
-
-		expect(logOutMock).toHaveBeenCalled();
-		expect(alertMock).toHaveBeenCalledWith('Logging you out');
+		// new tests
+		it('When ctrl & h are pressed check that logOur function is called', () => {
+			const ConsoleSpy = jest.spyOn(global.console, 'log');
+			const wrapper = mount(<App isLoggedIn />);
+			wrapper.instance().keyDownHandler({ keycode: 72, ctrlKey: true });
+			expect(ConsoleSpy).toHaveBeenCallWidth('logOut function console log for testing');
+			wrapper.unmount();
+		});		
 	});
 });
+
