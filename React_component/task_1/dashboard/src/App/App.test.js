@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 
 import PropTypes from 'prop-types';
+import { beforeEach } from 'node:test';
 
 
 
@@ -61,5 +62,34 @@ describe('<App />', () => {
 		it('contains the CourseList component', () => {
 			expect(wrapper.contains(<CourseList />)).toBe(true);
 		});
+	});
+});
+
+describe('<App />', () => {
+	let wrapper;
+	let logOutMock;
+	let alertMock;
+
+	beforeEach(() => {
+		logOutMock = jest.fn();
+		alertMock = jest.spyOn(window, 'alert');
+
+		wrapper = shallow(<App logOut={logOutMock} />);
+	});
+
+	afterEach(() => {
+		alertMock.mockClear();
+	});
+
+	it('Calls logOut function, shows alert when Control and h keys are pressed', () => {
+		const event = new KeyboardEvent('keydown', {
+			key: 'h',
+			ctrlKet: true,
+		});
+
+		mount(<div>{wrapper}</div>).getDOMNode().dispatchEvent(event);
+
+		expect(logOutMock).toHaveBeenCalled();
+		expect(alertMock).toHaveBeenCalledWith('Logging you out');
 	});
 });
