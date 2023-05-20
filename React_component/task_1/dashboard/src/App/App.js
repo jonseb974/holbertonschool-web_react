@@ -53,10 +53,12 @@ return (
 
 App.defaultProps = {
   isLoggedIn: false,
+  logOut: () => {}
 };
 
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
 };
 
 export default App;
