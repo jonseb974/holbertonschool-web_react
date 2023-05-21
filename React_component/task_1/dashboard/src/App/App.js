@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import CourseList from '../CourseList/CourseList';
 import Footer from '../Footer/Footer';
