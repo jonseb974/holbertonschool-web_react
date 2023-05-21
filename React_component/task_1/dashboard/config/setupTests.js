@@ -4,7 +4,14 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-global.TextEncoder = require('util').TextEncoder;
+global.TextEncoder = function () {
+  return {
+    encode: function (str) {
+      return Buffer.from(str, 'utf-8');
+    },
+  };
+};
+
 
 module.exports = {
   testEnvironment: 'jsdom',
