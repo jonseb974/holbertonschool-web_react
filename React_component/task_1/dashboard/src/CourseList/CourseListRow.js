@@ -1,7 +1,6 @@
 import React from 'react'
-//import './CourseList.css'
 import PropTypes from 'prop-types'
-
+import './CourseList.css';
 
 const CourseListRow = ({ isHeader = false, textFirstCell, textSecondCell = null }) => {
     // props:
@@ -18,14 +17,16 @@ const CourseListRow = ({ isHeader = false, textFirstCell, textSecondCell = null 
         } else {
             return (
             <tr>
-                <th>{textFirstCell}</th><th>{textSecondCell}</th>
+                <th>{textFirstCell}</th>
+                <th>{textSecondCell}</th>
             </tr>
             );
         }
     } else {
         return (
         <tr>
-            <td>{textFirstCell}</td><td>{textSecondCell}</td>
+            <td>{textFirstCell}</td>
+            <td>{textSecondCell}</td>
         </tr>
         );
     }
