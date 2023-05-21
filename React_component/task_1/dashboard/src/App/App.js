@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import PropTypes from 'prop-types';
 import { getLatestNotification } from '../utils/utils';
-import Notifications from './Notifications/Notifications';
+import Notifications from '../Notifications/Notifications';
 
 class App extends React.Component {
   constructor(props) {
