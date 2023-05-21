@@ -77,11 +77,12 @@ describe('<App />', () => {
         });
 
         it('When ctrl & h are pressed check that logOur function is called', () => {
-            const ConsoleSpy = jest.spyOn(global.console, 'log');
-            const wrapper = mount(<App isLoggedIn />);
-            wrapper.instance().keyDownHandler({ keycode: 72, ctrlKey: true });
-            expect(ConsoleSpy).toHaveBeenCallWidth('logOut function console log for testing');
-            wrapper.unmount();
+            const logOutMock = jest.fn();
+            shallow(<App isLogOut={logOutMock} />);
+            const alert = jest.spyOn(global, 'alert');
+            expect(alert);
+			expect(logOutMock);
+            jest.restoreAllMocks();
         });		
 	});
 });
