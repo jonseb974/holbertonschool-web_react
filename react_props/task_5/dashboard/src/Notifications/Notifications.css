@@ -2,21 +2,28 @@
     --primar-color: #E11D3F;
 }
 
+
 .Notifications {
     border: dashed 2px var(--primar-color);
-    padding: 1rem;
+    padding: /*1rem;*/ 1rem .5rem 0 .5rem;
+    float: right;
 }
+
+/*menuItem */
 .menuItem p {
     right: 3rem;
     padding: 1rem;
-    position: absolute;
+    /*position: absolute;*/
 }
 
+.menuItem {
+    text-align: right;
+}
 
-[data-notification-type="default"] {
+li[data-notification-type="default"] {
 	color: blue;
 }
 
-[data-notification-type="urgent"] {
+li[data-notification-type="urgent"] {
 	color: red;
 }
