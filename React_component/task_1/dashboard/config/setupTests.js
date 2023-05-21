@@ -1,10 +1,10 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { TextEncoder } from 'text-encoding-utf-8';
+//import { TextEncoder } from 'text-encoding-utf-8';
 
 
 Enzyme.configure({ adapter: new Adapter() });
-global.TextEncoder = TextEncoder;
+//global.TextEncoder = TextEncoder;
 
 module.exports = {
   testEnvironment: 'jsdom',
