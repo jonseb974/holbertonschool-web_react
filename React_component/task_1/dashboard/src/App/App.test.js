@@ -8,6 +8,12 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import { TextEncoder } from 'text-encoding';
 import PropTypes from 'prop-types';
+import { mount } from 'enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });
+configure({ adapter: new Adapter() });
 
 
 
