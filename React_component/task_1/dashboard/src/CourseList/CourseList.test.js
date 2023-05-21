@@ -3,26 +3,51 @@ import { shallow } from 'enzyme';
 //import CourseList from '../CourseList/CourseList';
 import CourseListRow from './CourseListRow';
 
-describe('<CourseListRow />', () => {
-  it(`When isHeader is true,renders one cell with colSpan=2 when textSecondCell does not exist`, () => {
-      const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" />);
-      expect(wrapper.find('th').exists()).toBe(true);
-      expect(Number(wrapper.find('th').prop('colSpan'))).toBe(2);
-      expect(wrapper.find('th').text()).toBe('test');
-  });
 
-  it(`When isHeader is true,renders one cells when textSecondCell exist`, () => {
-      const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" textSecondCell="test2" />);
-      expect(wrapper.find('th').length).toBe(2);
-      expect(wrapper.find('th').at(0).text()).toBe('test');
-      expect(wrapper.find('th').at(1).text()).toBe('test2');
-  });
+describe('CourseList component tests', () => {
 
-  it(`When isHeader is false,renders two td within a tr`, () => {
-      const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="test" textSecondCell="test2" />);
-      expect(wrapper.find('tr').length).toBe(1);
-      expect(wrapper.find('td').length).toBe(2);
-      expect(wrapper.find('td').at(0).text()).toBe('test');
-      expect(wrapper.find('td').at(1).text()).toBe('test2');
-  });
+    describe('When listCourse is not empty', () => {
+        let wrapper;
+
+        beforeEach(() => {
+            const listCourses = [
+                {id: 1, name: "ES6", credit: 60},
+                {id: 2, name: "Webpack", credit: 20},
+                {id: 3, name: "React", credit: 40},
+            ]
+            wrapper = shallow(<CourseList listCourses={listCourses}/>);
+        });
+
+        it('renders CourseList component without crashing', () => {
+            expect(wrapper.exists()).toBe(true);
+        });
+
+        it('renders 5 rows', () => {
+            const row = wrapper.find('CourseListRow');
+            expect(row).toHaveLength(5);
+            expect(row.at(0).html()).toEqual('<tr><th colSpan="2">Available courses</th></tr>');
+            expect(row.at(1).html()).toEqual('<tr><th>Course name</th><th>Credit</th></tr>');
+            expect(row.at(2).html()).toEqual('<tr><td>ES6</td><td>60</td></tr>');
+            expect(row.at(3).html()).toEqual('<tr><td>Webpack</td><td>20</td></tr>');
+            expect(row.at(4).html()).toEqual('<tr><td>React</td><td>40</td></tr>');
+        });
+    });
+
+    describe('When listCourse is empty', () => {
+        let wrapper;
+
+        beforeEach(() => {
+            wrapper = shallow(<CourseList listCourses={[]}/>);
+        });
+
+        it('renders CourseList component without crashing', () => {
+            expect(wrapper.exists()).toBe(true);
+        });
+
+        it('renders only headers and text "No course available yet"', () => {
+            const row = wrapper.find('CourseListRow');
+            expect(row).toHaveLength(3);
+            expect(row.at(2).prop('textFirstCell')).toEqual('No course available yet');
+        });
+    });
 });
