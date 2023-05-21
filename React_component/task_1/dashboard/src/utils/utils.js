@@ -12,4 +12,4 @@ function getLatestNotification() {
 }
 
 
-module.export = { getFullYear, getFooterCopy, getLatestNotification };
+module.exports = { getFullYear, getFooterCopy, getLatestNotification };
