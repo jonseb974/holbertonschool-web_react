@@ -1,6 +1,6 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { TextEncoder } from 'text-encoding';
+import { TextEncoder } from 'text-encoding-utf-8';
 
 
 Enzyme.configure({ adapter: new Adapter() });
