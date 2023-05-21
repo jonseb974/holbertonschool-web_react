@@ -9,44 +9,54 @@ import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
   componentDidMount() {
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key === 'h') {
-        alert('Logging you out')
-        this.props.logOut()
-      }
-    })
+    document.addEventListener('keydown', this.handleKeyDown); 
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', (e) => {});
+    document.removeEventListener('keydown', this.handleKeyDown);
   }
+
+  handleKeyDown = (e) => {
+    if (e.ctrlKey && e.key === 'h') {
+      e.preventDefault();
+      alert('Logging you out');
+      this.props.logOut();
+    }
+  }
+
   render() {
-    const { isLoggedIn } = this.props;
-
-  const listCourses = [
-    {id: 1, name: 'ES6', credit: 60},
-    {id: 2, name: 'Webpack', credit: 20},
-    {id: 3, name: 'React', credit: 40},
-  ];
-
-  const listNotifications = [
-  {id: 1, type: 'default', value: 'New course available'},
-  {id: 2, type: 'urgent', value: 'New resume available'},
-  {id: 3,  type: 'urgent', html: {__html: getLatestNotification()}},
-];
-
-return (
-  <div className="App">
-    <Notifications displayDrawer={true} />
-    <Header />
-    <div className='App-body'>
-      {isLoggedIn ? <CourseList /> : <Login />}
+    const isLoggedIn = this.props.isLoggedIn;
+    
+    const listCourses = [
+      {id: 1, name: 'ES6', credit: 60},
+      {id: 2, name: 'Webpack', credit: 20},
+      {id: 3, name: 'React', credit: 40},
+    ];
+    
+    const listNotifications = [
+      {id: 1, type: 'default', value: 'New course available'},
+      {id: 2, type: 'urgent', value: 'New resume available'},
+      {id: 3,  type: 'urgent', html: {__html: getLatestNotification()}},
+    ];
+    
+    return (
+    <>
+    <div className="App">
+      <Notifications displayDrawer={true} />
+      <Header />
+      <div className='App-body'>
+        {isLoggedIn ? <CourseList /> : <Login />}
+      </div>
+      <div className='App-footer'>
+        <Footer />
+      </div>
     </div>
-    <div className='App-footer'>
-      <Footer />
-    </div>   
-  </div>
+    </>
   );
 }
 }
