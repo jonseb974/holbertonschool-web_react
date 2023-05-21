@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import Enzyme from 'enzyme';
 import Header from './Header';
 import Adapter from 'enzyme-adapter-react-16';
+import { TextEncoder } from 'text-encoding-utf-8';
 
 Enzyme.configure({ adapter: new Adapter() })
 
