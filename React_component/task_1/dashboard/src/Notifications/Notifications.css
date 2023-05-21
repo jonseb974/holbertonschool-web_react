@@ -1,15 +1,19 @@
+@import '../App/App.css';
+/*
 :root {
     --primar-color: #E11D3F;
 }
-
+*/
 .Notifications {
     border: dashed 2px var(--primar-color);
-    padding: 1rem;
+    padding: 1rem .5rem 0 .5rem; /*1rem;*/
+    float: right;
 }
 .menuItem p {
-    right: 3rem;
+    text-align: right;
+    /*right: 3rem;*/
     padding: 1rem;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 
