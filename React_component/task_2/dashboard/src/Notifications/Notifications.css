@@ -1,0 +1,26 @@
+@import '../App/App.css';
+/*
+:root {
+    --primar-color: #E11D3F;
+}
+*/
+.Notifications {
+    border: dashed 2px var(--primar-color);
+    padding: 1rem .5rem 0 .5rem; /*1rem;*/
+    float: right;
+}
+.menuItem p {
+    text-align: right;
+    /*right: 3rem;*/
+    padding: 1rem;
+    /*position: absolute;*/
+}
+
+
+[data-notification-type="default"] {
+	color: blue;
+}
+
+[data-notification-type="urgent"] {
+	color: red;
+}

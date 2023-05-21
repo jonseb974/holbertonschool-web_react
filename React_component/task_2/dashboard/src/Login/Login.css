@@ -1,0 +1,16 @@
+
+
+.login {
+  margin: 3rem 0 0 2rem;
+}
+
+.App-body {
+    background-color: #ffffff;
+    display: flex;
+    margin: 1rem 0 0 2rem;
+}
+  
+.App-body label,
+.App-body input {
+    margin: 0 1rem 0 0 2rem;
+}
