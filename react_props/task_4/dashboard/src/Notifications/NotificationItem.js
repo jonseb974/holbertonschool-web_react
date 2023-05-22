@@ -15,9 +15,9 @@ const NotificationItem = ({ type, html, value }) => {
   };
   
   NotificationItem.propTypes = {
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     html: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
   };
   
   export default NotificationItem;
