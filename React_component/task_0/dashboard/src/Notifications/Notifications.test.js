@@ -1,9 +1,9 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import Enzyme from 'enzyme'
-import Notifications from './Notifications'
-import NotificationItem from './NotificationItem'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { shallow } from 'enzyme';
+import Enzyme from 'enzyme';
+import Notifications from './Notifications';
+import NotificationItem from './NotificationItem';
+import PropTypes from 'prop-types';
 
 
 describe('<Notifications />', () => {
