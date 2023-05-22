@@ -3,13 +3,13 @@ import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 //import { render } from '@testing-library/react';
 import NotificationItem from './NotificationItem';
-
+// type="urgent" value="test"
 configure({ adapter: new Adapter() });
 
 
 describe('NotificationItem component tests', () => {
   it('Test if renders without crashing', () => {
-    const wrapper = shallow(<NotificationItem type="urgent" value="test"/>);
+    const wrapper = shallow(<NotificationItem />);
     expect(wrapper.exists()).toBe(true);
   });
 
