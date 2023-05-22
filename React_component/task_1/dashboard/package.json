@@ -44,12 +44,13 @@
     "web-vitals": "^3.3.1"
   },
   "jest": {
+    "testEnvironment": "jest-environment-jsdom",
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/__mocks__/styleMocks.js",
-      "\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg|png|jpg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   }
 }
