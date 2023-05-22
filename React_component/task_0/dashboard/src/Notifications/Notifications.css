@@ -1,3 +1,5 @@
+@import '../App/App.css';
+
 :root {
     --primar-color: #E11D3F;
 }
@@ -5,6 +7,7 @@
 .Notifications {
     border: dashed 2px var(--primar-color);
     padding: 1rem;
+    float: right;
 }
 .menuItem p {
     right: 3rem;
@@ -13,10 +16,10 @@
 }
 
 
-[data-notification-type="default"] {
+li[data-notification-type="default"] {
 	color: blue;
 }
 
-[data-notification-type="urgent"] {
+li[data-notification-type="urgent"] {
 	color: red;
 }
