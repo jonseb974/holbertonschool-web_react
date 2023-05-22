@@ -26,12 +26,10 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
         console.log('Close button has been clicked\n');
       }}
       >x</button>
-      <p>Here is the list of notifications</p>
+      {listNotifications.length === 0 ? <p>No new notification for now </p>
+        : <p>Here is the list of notifications</p>}
       <ul>
-        {listNotifications.length === 0 ? (
-            <p>No new notification for now </p>
-        ) : (
-          listNotifications.map((notification) => (
+        {listNotifications.map((notification) => (
             <NotificationItem
             key={notification.id}
             id={notification.id}
@@ -39,8 +37,7 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
             type={notification.type}
             value={notification.value} 
             />
-          ))
-        )}
+          ))}
       </ul>
     </div>
     )}
