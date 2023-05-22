@@ -6,7 +6,7 @@ import NotificationItemShape from './NotificationItemShape';
 import './Notifications.css';
 
 
-class Notifications extends Component  {
+class Notifications extends React.Component  {
   markAsRead = (id) => {
     console.log('Notification ${id} has been marked as read');
   };
