@@ -1,9 +1,9 @@
-import React from 'react'
-import './Notifications.css'
-import NotificationItem from './NotificationItem'
-import { getLatestNotification } from '../utils/utils'
-import NotificationItemShape from './NotificationItemShape'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import NotificationItem from './NotificationItem';
+import NotificationItemShape from './NotificationItemShape';
+
+import './Notifications.css';
 
 
 const Notifications = ({ displayDrawer, listNotifications }) => {
@@ -48,13 +48,14 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
   );
 };
 
-Notifications.defaultProps = {
-  displayDrawer: false
+Notifications.defaultProps = { 
+  displayDrawer: false,
+  listNotifications: [],
 }
 
 Notifications.propTypes = {
-  //displayDrawer: PropTypes.bool
-  displayDrawer: PropTypes.bool.isRequired,
+  displayDrawer: PropTypes.bool,
+  //displayDrawer: PropTypes.bool.isRequired,
   //0listNotifications: PropTypes.arrayOf(PropTypes.string).isRequired
   //listNotifications: PropTypes.arrayOf(PropTypes.string),
   //listNotifications: PropTypes.arrayOf(NotificationItem.propTypes),
