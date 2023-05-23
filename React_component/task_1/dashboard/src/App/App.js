@@ -9,6 +9,10 @@ import CourseList from '../CourseList/CourseList';
 //import Notifications from './Notifications/Notifications';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  } 
+  
   handleKeyDown = (event) => {
     const { logOut } = this.props;
     if (event.ctrlKey && event.key === 'h') {
