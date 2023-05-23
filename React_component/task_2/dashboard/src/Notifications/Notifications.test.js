@@ -6,6 +6,8 @@ import NotificationItem from './NotificationItem';
 import PropTypes from 'prop-types';
 
 
+console.log = jest.fn();
+
 describe('<Notifications />', () => {
 	it('tests that Notifications renders without crashing', () => {
 		const wrapper = shallow(<Notifications />);
@@ -46,5 +48,13 @@ describe('<Notifications />', () => {
 	it('tests when not passing listNotifications prop', () => {
 		const wrapper = shallow(<Notifications />);
 		expect(wrapper.find(NotificationItem).exists()).toBe(false);
+	});
+
+	it('should call console.log with the right message when markAsRead is called', () => {
+		const wrapper = shallow(<Notifications listNotifications={[{ id: 1, html: '<p>Notification 1</p>', type: 'info', value: '1' }]} />);
+		const notificationItem = wrapper.find('NotificationItem');
+		
+		notificationItem.props().markAsRead(notificationItem.props().id);
+		expect(console.log).toHaveBeenCalledWith('Notification 1 has been marked as read');
 	});
 });
