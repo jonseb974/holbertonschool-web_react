@@ -6,15 +6,17 @@ import './BodySectionWithMarginBottom.css'; // import styling section
 
 
 class BodySectionWithMarginBottom extends React.Component {
- render() {
-    const { title } = this.props;
-
-    return (
-        <div className="bodySectionWithMargin">
-            <BodySection {...props}/>           
-        </div>
-    );
-}
+    constructor(props) {
+        super(props);
+    }
+    
+    render() {
+        return (
+            <div className="bodySectionWithMargin">
+                <BodySection {...props}/>           
+            </div>
+        );
+    }
 }   
 
 BodySectionWithMarginBottom.PropTypes = {
@@ -26,4 +28,4 @@ BodySectionWithMarginBottom.defaultProps = {
     children: <React.Fragment />,
 };
 
-export default BodySectionMarginBottom;
+export default BodySectionWithMarginBottom;
