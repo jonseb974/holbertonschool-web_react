@@ -7,6 +7,10 @@ import './Notifications.css';
 
 
 class Notifications extends React.Component  {
+  constructor(props) {
+    super(props);
+    this.markAsRead = this.markAsRead.bind(this);
+  }
   markAsRead = (id) => {
     console.log('Notification ${id} has been marked as read');
   };
