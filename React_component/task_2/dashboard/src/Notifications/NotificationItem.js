@@ -5,7 +5,7 @@ import './Notifications.css';
 //import { getLatestNotification } from '../utils/utils';
 
 
-const NotificationItem = ({ type, html, value, markAsRead }) => {
+const NotificationItem = ({ type, html, value, markAsRead, id }) => {
   const liProps = {
     'data-notification-type': type,
     onClick: () => markAsRead(id),
@@ -19,11 +19,16 @@ const NotificationItem = ({ type, html, value, markAsRead }) => {
     type: PropTypes.string,
     html: PropTypes.shape({ __html: PropTypes.string, }),
     value: PropTypes.string,
-    markAsRead: PropTypes.func.isRequired,
+    markAsRead: PropTypes.func,
+    id: PropTypes.number,
   };
 
   NotificationItem.defaultProps = {
     type: 'default',
+    html: {},
+    value: '',
+    markAsRead: () => {},
+    id: NaN,
   };
 
 export default NotificationItem;
