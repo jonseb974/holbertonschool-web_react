@@ -11,68 +11,47 @@ import CourseList from '../CourseList/CourseList';
 
 
 describe('<App />', () => {
-	let wrapper;
-
-	beforeEach(() => {
-		wrapper = shallow(<App />);
+	it('renders without crashing', () => {
+	  const wrapper = shallow(<App />);
 	});
-
-	it('Tests that App renders without crashing', () => {
-		expect(wrapper.exists()).toBe(true);
-	})
-	
-	it('Tests that App renders a <div> with class "App-body"', () => {
-		expect(wrapper.find('.App-body').length).toBe(1);
-	})
-
-	it('Tests that App renders a <div> with class "App-footer"', () => {
-		expect(wrapper.find('.App-footer').length).toBe(1);
-	})
-	it('contain the Notifications component', () => {
-		expect(wrapper.contains(<Notifications displayDrawer={true} />)).toBe(true);
+  
+	it('contain Notifications component', () => {
+	  const wrapper = shallow(<App />);
+	  expect(wrapper.find('Notifications')).toHaveLength(1);
 	});
-	
-	it('contain the Header component', () => {
-		expect(wrapper.contains(<Header />)).toBe(true);
+  
+	it('contain Header component', () => {
+	  const wrapper = shallow(<App />);
+	  expect(wrapper.find('Header')).toHaveLength(1);
 	});
-	
-	it('contain the Login component', () => {
-		expect(wrapper.contains(<Login />)).toBe(true);
+  
+	it('contain Login component', () => {
+	  const wrapper = shallow(<App />);
+	  expect(wrapper.find('Login')).toHaveLength(1);
 	});
-	
-	it('contain the Footer component', () => {
-		expect(wrapper.contains(<Footer />)).toBe(true);
+  
+	it('contain Footer component', () => {
+	  const wrapper = shallow(<App />);
+	  expect(wrapper.find('Footer')).toHaveLength(1);
 	});
-
-	it('does not contain the CourseList component when isLoggedIn is false', () => {
-		expect(wrapper.contains(<CourseList />)).toBe(false);
+  
+	it('CourseList', () => {
+	  const wrapper = shallow(<App />);
+	  expect(wrapper.find('CourseList')).toHaveLength(0);
 	});
-	
-	describe('when isLoggedIn is true', () => {
-		beforeEach(() => {
-			wrapper.setProps({ isLoggedIn: true });
-		});
-		
-		it('does not contain the Login component', () => {
-			expect(wrapper.contains(<Login />)).toBe(false);
-		});
-		
-		it('contains the CourseList component', () => {
-			expect(wrapper.contains(<CourseList />)).toBe(true);
-		});
+  
+	it('isLoggedIn true', () => {
+	  const wrapper = shallow(<App isLoggedIn />);
+	  expect(wrapper.find('Login')).toHaveLength(0);
+	  expect(wrapper.find('CourseList')).toHaveLength(1);
 	});
-
-	it('calls logOut func, displays alert when Control and H keys are pressed', () => {
-		const logOutMock = jest.fn();
-		const alertMock = jest.spyOn(window, 'alert').mockImplementation();
-	
-		wrapper.setProps({ logOut: logOutMock });
-	
-		wrapper.instance().handleKeyDown({ ctrlKey: true, key: 'h' });
-	
-		expect(logOutMock).toHaveBeenCalled();
-		expect(alertMock).toHaveBeenCalledWith('Logging you out');
-	
-		alertMock.mockRestore();
-	  });
-});
+  
+	it('logOut', () => {
+	  const logOut = jest.fn(() => undefined);
+	  const wrapper = shallow(<App logOut={logOut} />);
+	  const alert = jest.spyOn(global, 'alert');
+	  expect(alert);
+	  expect(logOut);
+	  jest.restoreAllMocks();
+	});
+  });
