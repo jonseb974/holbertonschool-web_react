@@ -13,7 +13,7 @@ const CourseList = ({ listCourses }) => {
         <CourseListRow isHeader={true} textFirstCell={"Course name"} textSecondCell={"Credit"} />
       </thead>
       <tbody id="CourseBody">
-        {listCourses.length ===0 && (
+        {listCourses.length === 0 && (
             <CourseListRow textFirstCell={"No courses available yet"} />
         )}
         {listCourses.map(course => (
