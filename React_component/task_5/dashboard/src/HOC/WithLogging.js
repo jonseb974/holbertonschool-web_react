@@ -2,7 +2,7 @@ import React from 'react';
 
 
 // Higher-Order-Component (H.O.C) logs when component is unmounted
-function WithLogging(WrappedComponent) {
+const  WithLogging = (WrappedComponent) => {
     // Determine the wrapped component name
   const componentName =
     WrappedComponent.displayName || WrappedComponent.name || 'Component';
@@ -13,7 +13,6 @@ function WithLogging(WrappedComponent) {
         // Log when component is mounted
       console.log(`Component ${componentName} is mounted`);
     }
-
     componentWillUnmount() {
         // Log when component is unmounted
       console.log(`Component ${componentName} is going to unmount`);
