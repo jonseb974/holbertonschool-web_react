@@ -1,28 +1,19 @@
-//import React from 'react';
-//import { act } from 'react-dom/test-utils';
 import { getFullYear, getFooterCopy, getLatestNotification } from './utils';
 
+describe('Utils tests', () => {
+    test('should returns the full actually year', () => {
+        expect(getFullYear()).toEqual(2023);
+    });
 
-// test to check getFullYear returns correct year
-test('getFullYear returns correct year', () => {
-	  expect(getFullYear()).toBe(2023);
-});
+    test('should returns the good footer if isIndex is true', () => {
+        expect(getFooterCopy(true)).toEqual('Holberton School');
+    });
 
+    test('should returns the good footer if isIndex is false', () => {
+        expect(getFooterCopy(false)).toEqual('Holberton School main dashboard');
+    });
 
-// test to check that getFooter returns correct string
-// when arg is false
-test('getFooter returns correct string if false', () => {
-	  expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
-});
-
-// test to check that getFooter returns correct string
-// when arg is true
-test('getFooter returns correct string if true', () => {
-	expect(getFooterCopy(true)).toBe('Holberton School');
-});
-
-// test to check that getLatestNotification returns correct
-// html string
-test('getLatestNotification returns correct html string', () => {
-	  expect(getLatestNotification().__html).toBe("<li data-priority='urgent'<strong>Urgent requirement</strong> - complete by EOD</li>");
+    test('should returns the latest notification', () => {
+        expect(getLatestNotification()).toEqual('<strong>Urgent requirement</strong> - complete by EOD');
+    });
 });
