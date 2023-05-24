@@ -1,34 +1,25 @@
 import React from 'react'
-//import './CourseList.css'
+import './CourseList.css'
 import PropTypes from 'prop-types'
 
 
-const CourseListRow = ({ isHeader = false, textFirstCell, textSecondCell = null }) => {
-    // props:
-    // - isHeader: bool, default: false
-    // - textFirstCell: string, required
-    // - textSecondCell: string, default: null
-    if (isHeader) {
-        if (textSecondCell === null) {
-            return (
-            <tr>
-                <th colSpan="2">{textFirstCell}</th>
-            </tr>
-            );
-        } else {
-            return (
-            <tr>
-                <th>{textFirstCell}</th><th>{textSecondCell}</th>
-            </tr>
-            );
-        }
-    } else {
-        return (
-        <tr>
-            <td>{textFirstCell}</td><td>{textSecondCell}</td>
-        </tr>
-        );
-    }
+const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
+    let tr;
+
+    if (isHeader && textSecondCell === null) tr = <th colSpan={2}>{textFirstCell}</th>;
+    else if (isHeader && textSecondCell) tr = (
+        <React.Fragment>
+            <th>{textFirstCell}</th>
+            <th>{textSecondCell}</th>
+        </React.Fragment>
+    ); else tr = (
+        <React.Fragment>
+            <td>{textFirstCell}</td>
+            <td>{textSecondCell}</td>
+        </React.Fragment>
+    );
+
+    return <tr>{tr}</tr>;
 };
 
 CourseListRow.propTypes = {
