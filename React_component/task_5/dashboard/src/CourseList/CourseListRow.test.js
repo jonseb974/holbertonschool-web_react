@@ -4,22 +4,29 @@ import CourseListRow from './CourseListRow';
 
 
 // shallow render CourseListRow component
-describe('<CourseListRow />', () => {
-    it(`When isHeader is true, renders on cell with colspan = 2 when
-        textSecondCell does not exist`, () => {
-        const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" />);
-        expect(wrapper.find('th').exists()).toBe(true);
-        expect(parseInt(wrapper.find('th').prop('colSpan'))).toBe(2);
+describe('CourseListRow component tests', () => {
+
+    it('renders CourseListRow component without crashing', () => {
+        const wrapper = shallow(<CourseListRow textFirstCell="School" />);
+        expect(wrapper.exists()).toBe(true);
     });
 
-    it(`When isHeader is true, renders two cells when textSecondCell is present`, () => {
-        const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="test" textSecondCell="test2" />);
-        expect(wrapper.find('th').length).toBe(2);
+    it('renders when header is true and textSecondCell is null', () => {
+        const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="School"/>);
+        const th = wrapper.find('th');
+        expect(th).toHaveLength(1);
+        expect(th.prop('colSpan')).toEqual(2);
     });
 
-    it(`When isHeader is false, renders two td elements within a tr element`, () => {
-        const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell="test" textSecondCell="test2" />);
-        expect(wrapper.find('tr').length).toBe(1);
-        expect(wrapper.find('td').length).toBe(2);
+    it('renders when header is true and textSecondCell is not null', () => {
+        const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell="School" textSecondCell="Year" />);
+        const th = wrapper.find('th');
+        expect(th).toHaveLength(2);
+    });
+
+    it('renders when header is false', () => {
+        const wrapper = shallow(<CourseListRow textFirstCell="School" textSecondCell="Year"/>);
+        const td = wrapper.find('td');
+        expect(td).toHaveLength(2);
     });
 });
