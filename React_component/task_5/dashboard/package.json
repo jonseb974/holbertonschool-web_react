@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
-    "build": "webpack --mode production",
     "test-watch": "jest --watch",
     "test": "jest",
     "clear-cache": "jest --clearCache"
@@ -21,24 +20,23 @@
     "css-loader": "^6.7.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.7",
-    "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^8.1.0",
-    "imagemin-optipng": "^8.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "jest-transform-css": "^6.0.1",
     "style-loader": "^3.3.2",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.1",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react-scripts": "5.0.1",
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
     "@testing-library/react": "^14.0.0",
     "babel": "^6.23.0",
-    "jquery": "^3.7.0",
-    "lodash": "^4.17.21",
-    "mozjpeg": "^8.0.0",
-    "node": "^20.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -46,12 +44,12 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "setupFiles": [
+    "setupFilesAfterEnv": [
       "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg|png|jpg)$": "<rootDir>/__mocks__/fileMock.js"
+      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   }
 }
