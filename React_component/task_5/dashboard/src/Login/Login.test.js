@@ -1,23 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Enzyme from 'enzyme';
 import Login from './Login';
-import Adapter from 'enzyme-adapter-react-16';
-//import '@testing-library/jest-dom';
-//import expect from 'expect';
-//import '@testing-library/jest-dom/extend-expect';
 
 
-Enzyme.configure({ adapter: new Adapter() })
+describe('Header component tests', () => {
 
-describe('<Login />', () => {
-	it('tests that Login renders without crashing', () => {
-		shallow(<Login />);
-	})
+    let wrapper;
 
-	it('tests that Login renders two checks', () => {
-		const wrapper = shallow(<Login />);
-		expect(wrapper.find('input')).toHaveLength(2);
-        expect(wrapper.find('label')).toHaveLength(2);
-	});
+    beforeEach(() => {
+        wrapper = shallow(<Login />);
+    });
+
+    it('renders Login without crashing', () => {
+        expect(wrapper.exists()).toBe(true);
+    });
+
+    it('renders 2 input tags', () => {
+        const appHeader = wrapper.find('input');
+        expect(appHeader).toHaveLength(2);
+    });
+
+    it('renders 2 label tags', () => {
+        const appHeader = wrapper.find('label');
+        expect(appHeader).toHaveLength(2);
+    });
 });
