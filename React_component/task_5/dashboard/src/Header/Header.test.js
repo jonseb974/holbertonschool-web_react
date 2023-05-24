@@ -1,19 +1,32 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Enzyme from 'enzyme';
 import Header from './Header';
-import Adapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ adapter: new Adapter() })
 
-describe('<Header />', () => {
-	it('tests that Header renders without crashing', () => {
-		shallow(<Header />);
-	})
+describe('Header component tests', () => {
 
-	it('tests that Header renders three list items', () => {
-		const wrapper = shallow(<Header />);
-		expect(wrapper.find('img')).toHaveLength(1);
-        expect(wrapper.find('img')).toHaveLength(1);
-	});
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<Header />);
+    });
+
+    it('renders Header without crashing', () => {
+        expect(wrapper.exists()).toBe(true);
+    });
+
+    it('renders a div with the class App-header', () => {
+        const appHeader = wrapper.find('.App-header');
+        expect(appHeader).toHaveLength(1);
+    });
+
+    it('renders a tag img', () => {
+        const appHeader = wrapper.find('img');
+        expect(appHeader).toHaveLength(1);
+    });
+
+    it('renders a tag h1', () => {
+        const appHeader = wrapper.find('h1');
+        expect(appHeader).toHaveLength(1);
+    });
 });
