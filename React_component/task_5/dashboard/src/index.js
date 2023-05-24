@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Notifications from './Notifications/Notifications'; 
-import './App/App.css';
 import App from './App/App';
 
 
