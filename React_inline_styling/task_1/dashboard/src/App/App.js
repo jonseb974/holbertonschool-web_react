@@ -14,13 +14,15 @@ import {getLatestNotification} from '../utils/utils';
 
 
 const styles = StyleSheet.create({
-  appBody: {
+  body: {
+    backgroundColor: '#deb5b545',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
     borderTop: '3px solid var(--holberton-red)',
   },
-  appFooter: {
+  footer: {
+    backgroundColor: '#f5f5f5ab',
     position: 'absolute',
     bottom: 0,
     borderTop: '3px solid var(--holberton-red)',
@@ -70,7 +72,7 @@ class App extends React.Component {
                 <Notifications listNotifications={listNotifications}/>
                 <div className={css(styles.app)}>
                     <Header />
-                    <div className={css(styles.appBody)}>
+                    <div className={css(styles.body)}>
                         {
                             isLoggedIn === true &&
                             <BodySectionWithMarginBottom
@@ -93,7 +95,7 @@ class App extends React.Component {
                             <p>Hello World!</p>
                         </BodySection>
                     </div>
-                    <div className={css(styles.appFooter)}>
+                    <div className={css(styles.footer)}>
                         <Footer className={css(styles.footerText)} />
                     </div>
                 </div>
