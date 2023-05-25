@@ -1,3 +1,8 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Notifications.css';
+
+
 class NotificationsItem extends React.PureComponent {
     render() {
         const { type, html, value, markAsRead, id } = this.props;
