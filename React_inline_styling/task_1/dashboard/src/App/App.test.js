@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
 import App from './App';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
@@ -9,6 +10,13 @@ import Footer from '../Footer/Footer';
 import {getLatestNotification} from '../utils/utils';
 
 describe('App component tests', () => {
+  beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   describe('When isLoggedIn = false', () => {
 
