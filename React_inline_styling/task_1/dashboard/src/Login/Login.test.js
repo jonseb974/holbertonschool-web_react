@@ -1,8 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Login from './Login';
+import { StyleSheetTestUtils } from 'aphrodite';
 
 describe('Header component tests', () => {
+    beforeEach(() => {
+        StyleSheetTestUtils.suppressStyleInjection();
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
 
     let wrapper;
 
