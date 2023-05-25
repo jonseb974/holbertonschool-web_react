@@ -1,10 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
 import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
 import BodySection from "./BodySection";
 import {expectedError} from "@babel/core/lib/errors/rewrite-stack-trace";
 
 describe('BodySectionWithMarginBottom component tests', () => {
+    beforeEach(() => {
+        StyleSheetTestUtils.suppressStyleInjection();
+    });
 
     let wrapper;
     const props = {
