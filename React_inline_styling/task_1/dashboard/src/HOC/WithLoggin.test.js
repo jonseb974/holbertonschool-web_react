@@ -4,6 +4,10 @@ import WithLogging from './WithLogging';
 import Login from '../Login/Login';
 
 describe('WihLogging tests', () => {
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     it('console.log was called on mount and on unmount with Component when the wrapped element is pure html', () => {
         console.log = jest.fn();
         const HOC = WithLogging(() => <p />);
