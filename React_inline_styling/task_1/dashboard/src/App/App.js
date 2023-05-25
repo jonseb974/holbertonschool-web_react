@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, css } from 'aphrodite';
 
-import './App.css';
 import BodySection from "../BodySection/BodySection";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 import CourseList from '../CourseList/CourseList';
@@ -13,6 +13,23 @@ import Notifications from '../Notifications/Notifications';
 import {getLatestNotification} from '../utils/utils';
 
 
+const styles = StyleSheet.create({
+  appBody: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    borderTop: '3px solid var(--holberton-red)',
+  },
+  appFooter: {
+    position: 'absolute',
+    bottom: 0,
+    borderTop: '3px solid var(--holberton-red)',
+    width: '100%',
+  },
+  footerText: {
+    fontStyle: 'italic',
+  },
+});
 
 class App extends React.Component {
     constructor(props) {
@@ -51,18 +68,24 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Notifications listNotifications={listNotifications}/>
-                <div className={"App"}>
+                <div className={css(styles.app)}>
                     <Header />
-                    <div className={"App-body"}>
+                    <div className={css(styles.appBody)}>
                         {
                             isLoggedIn === true &&
-                            <BodySectionWithMarginBottom title={"Course list"}>
-                                <CourseList listCourses={listCourses}/>
+                            <BodySectionWithMarginBottom
+                                title={"Course list"} 
+                                className={css(styles.bodySection)}
+                            >
+                                <CourseList listCourses={listCourses} />
                             </BodySectionWithMarginBottom>
                         }
                         {
                             isLoggedIn === false &&
-                            <BodySectionWithMarginBottom title={"Log in to continue"}>
+                            <BodySectionWithMarginBottom
+                                title={"Log in to continue"} 
+                                className={css(styles.bodySection)}
+                            >
                                 <Login/>
                             </BodySectionWithMarginBottom>
                         }
@@ -70,7 +93,9 @@ class App extends React.Component {
                             <p>Hello World!</p>
                         </BodySection>
                     </div>
-                    <Footer />
+                    <div className={css(styles.appFooter)}>
+                        <Footer className={css(styles.footerText)} />
+                    </div>
                 </div>
             </React.Fragment>
         );
