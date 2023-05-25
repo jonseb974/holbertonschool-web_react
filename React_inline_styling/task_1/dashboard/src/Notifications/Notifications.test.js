@@ -1,9 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
 import Notifications from './Notifications';
 import {getLatestNotification} from '../utils/utils';
 
 describe('Notifications component tests', () => {
+    beforeEach(() => {
+        StyleSheetTestUtils.suppressStyleInjection();
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
 
     describe('When displayDrawer is true and listNotifications not empty', () => {
         let wrapper;
