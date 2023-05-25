@@ -108,7 +108,7 @@ describe('Notifications component tests', () => {
     });
 
     describe('When props are updating', () => {
-        it('doesnt rerender if there is the same listNotificationItem', () => {
+        it('does not rerender if there is the same listNotificationItem', () => {
             const listNotifications = [
                 {id: 1, type: "default", value: "New course available"},
                 {id: 2, type: "urgent", value: "New resume available"},
