@@ -4,6 +4,23 @@ import './Notifications.css';
 import NotificationsItem from './NotificationsItem';
 import NotificationItemShape from './NotificationItemShape';
 
+
+const styles = StyleSheet.create({
+    notifications: {
+        border: '2px dotted var(--holberton-red)',
+        padding: '1rem .5rem 0 .5rem',
+        float: 'right',
+    },
+    menuItem: {
+        textAlign: 'right',
+    },
+    defaultNotification: {
+        color: 'darkblue',
+    },
+    urgentNotification: {
+        color: 'red',
+    },
+});
 class Notifications extends React.Component {
     constructor(props) {
         super(props);
@@ -22,11 +39,11 @@ class Notifications extends React.Component {
         const { displayDrawer, listNotifications } = this.props;
         return (
             <React.Fragment>
-                <div className={"menuItem"}>
+                <div className={css(styles.menuItem)}>
                     <p>Your notifications</p>
                 </div>
                 {displayDrawer && (
-                    <div className={'Notifications'}>
+                    <div className={css(styles.notifications)}>
                         <button
                             style={{
                                 position: "absolute",
