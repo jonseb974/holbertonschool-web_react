@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CourseList.css'
+import { StyleSheet, css } from 'aphrodite';
+import './CourseList.css';
+
+const styles = StyleSheet.create({
+    row: {
+        backgroundColor: '#f5f5f5ab',
+    },
+});
 
 const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
     let tr;
