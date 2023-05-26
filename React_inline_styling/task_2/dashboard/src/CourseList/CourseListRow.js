@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
+
 const styles = StyleSheet.create({
     headerRow: {
         backgroundColor: '#deb5b545',
@@ -25,28 +26,27 @@ const styles = StyleSheet.create({
 });
 
 const CourseListRow = ({ isHeader, textFirstCell, textSecondCell }) => {
+    let rowStyle = isHeader ? styles.headerRow : styles.defaultRow;
     let tr;
-    const rowStyle =  isHeader ? css(styles.headerRow) : css(styles.defaultRow);
-
+    
     if (isHeader && textSecondCell === null) {
-        tr = <th colSpan={2} className={css(styles.th, styles.centeredTh)}>{textFirstCell}</th>;
+        tr = <th className={css(styles.th, styles.centeredTh)} colSpan={2}>{textFirstCell}</th>;
     } else if (isHeader && textSecondCell) {
         tr = (
-        <React.Fragment>
-            <th className={css(styles.th)}>{textFirstCell}</th>
-            <th className={css(styles.th)}>{textSecondCell}</th>
-        </React.Fragment>
+        <>
+        <th className={css(styles.th)}>{textFirstCell}</th>
+        <th className={css(styles.th)}>{textSecondCell}</th>
+        </>
         );
     } else {
         tr = (
-        <React.Fragment>
-            <td className={css(styles.td)}>{textFirstCell}</td>
-            <td className={css(styles.td)}>{textSecondCell}</td>
-        </React.Fragment>
+        <>
+        <td className={css(styles.td)}>{textFirstCell}</td>
+        <td className={css(styles.td)}>{textSecondCell}</td>
+        </>
         );
     }
-    
-    return <tr style={rowStyle}>{tr}</tr>;
+    return <tr className={css(rowStyle)}>{tr}</tr>;
 };
 
 CourseListRow.propTypes = {
