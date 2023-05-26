@@ -3,29 +3,20 @@ import PropTypes from 'prop-types';
 import { StyleSheet, css } from 'aphrodite';
 
 
+const styles = StyleSheet.create({
+    defaultItem: {
+
+    },
+    urgentItem: {
+
+    },
+});
 class NotificationsItem extends React.PureComponent {
     render() {
-        const styles =  StyleSheet.create({
-        
-            .Notifications {
-                border: 2px dotted var(--holberton-red);
-                padding: 1rem .5rem 0 .5rem;
-                float: right;
-            }
-            li[data-notification-type="default"] {
-                color: darkblue;
-            }
-            li[data-notification-type="urgent"] {
-                color: red;
-            }
-            .menuItem {
-                text-align: rig
-            }
-        });
-
         const { type, html, value, markAsRead, id } = this.props;
         const liProps = {
             'data-notification-type': type,
+            className: css(type === 'urgent' ? styles.urgentItem :  styles.defaultItem),
         };
         if (html) liProps.dangerouslySetInnerHTML = html;
         return (
