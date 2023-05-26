@@ -5,10 +5,10 @@ import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
     defaultItem: {
-
+        color: 'darkblue',
     },
     urgentItem: {
-
+        color: 'red',
     },
 });
 class NotificationsItem extends React.PureComponent {
