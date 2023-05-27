@@ -21,6 +21,7 @@
 		"html-webpack-plugin": "^5.5.1",
 		"image-webpack-loader": "^8.1.0",
 		"jest": "^26.6.3",
+		"jest-webpack-resolver": "^0.3.0",
 		"style-loader": "^3.3.2",
 		"webpack": "^5.82.0",
 		"webpack-cli": "^5.1.1",
@@ -48,6 +49,7 @@
 			"\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
 			"\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
 		},
-		"config": "<rootDir>/config/webpack.config.js"
+		"config": "<rootDir>/config/webpack.config.js",
+		"resolver": "jest-webpack-resolver"
 	}
 }
