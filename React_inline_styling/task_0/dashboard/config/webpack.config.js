@@ -33,9 +33,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            './Login.css': path.resolve(__dirname, 'src/Login/Login.css'),
-            './Notifications.css': path.resolve(__dirname, 'src/Notifications/Notifications.css'),
-            './NotificationsItem.css': path.resolve(__dirname, 'src/Notifications/NotificationsItem.css'),
+            './Login.css': path.resolve(__dirname, '../src/Login/Login.css'),
+            './Notifications.css': path.resolve(__dirname, '../src/Notifications/Notifications.css'),
+            './NotificationsItem.css': path.resolve(__dirname, '../src/Notifications/NotificationsItem.css'),
         },
     },
 };
