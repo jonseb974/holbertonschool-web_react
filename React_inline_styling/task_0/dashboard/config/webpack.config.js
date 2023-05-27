@@ -31,4 +31,9 @@ module.exports = {
             },
         ],
     },
-}
+    resolve: {
+        alias: {
+            './Login.css': path.resolve(__dirname, 'src/Login/Login.css')
+        },
+    },
+};
