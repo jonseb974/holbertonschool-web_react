@@ -49,6 +49,8 @@
 			"\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
 			"\\.(jpg)$": "<rootDir>/__mocks__/fileMock.js"
 		},
-		"resolver": "jest-webpack-resolver"
+		"transform": {
+			"^.+\\.jsx?$": "babel-jest"
+		}
 	}
 }
