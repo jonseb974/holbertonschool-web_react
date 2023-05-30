@@ -13,23 +13,41 @@ import BodySection from "../BodySection/BodySection";
 class App extends React.Component {
     constructor(props) {
         super(props);
+        // Initialize the component state set default value for displayDrawer.
+        this.state =  {
+            displayDrawer: false
+        };
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
+
     componentDidMount() {
+// Add event listener to listen for keyboard events when component is mounted
         document.addEventListener('keydown', this.handleKeyDown);
     }
-
+// Remove event listener when component is unmounted to prevent memory leaks
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyDown);
     }
 
     handleKeyDown = (event) => {
+        // Check if user pressed [Ctr + h]
         if (event.ctrlKey && event.key === 'h') {
             event.preventDefault();
-            alert('Logging you out');
-            this.props.logOut();
+            alert('Logging you out');  // Display alert + call logOut function
+            this.props.logOut(); // from  props
         }
     }
+
+    handleDisplayDrawer =  () => {
+        // Update state to display the drawer
+        this.setState({ displayDrawer: true});
+    }
+
+    handleHideDrawer =  () => {
+        // Update state to hide the drawer
+        this.setState({ displayDrawer: false});
+    }
+
     render() {
         const isLoggedIn = this.props.isLoggedIn;
 
@@ -37,15 +55,16 @@ class App extends React.Component {
             {id: 1, name: "ES6", credit: 60},
             {id: 2, name: "Webpack", credit: 20},
             {id: 3, name: "React", credit: 40},
-        ]
+        ];
 
         const listNotifications = [
             {id: 1, type: "default", value: "New course available"},
             {id: 2, type: "urgent", value: "New resume available"},
             {id: 3, type: "urgent", html: {__html: getLatestNotification()}},
-        ]
+        ];
+
         return (
-            <React.Fragment>
+            <React.Fragment> 
                 <Notifications listNotifications={listNotifications}/>
                 <div className={"App"}>
                     <Header />
