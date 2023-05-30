@@ -63,6 +63,8 @@ class App extends React.Component {
             {id: 3, type: "urgent", html: {__html: getLatestNotification()}},
         ];
 
+        const wrapper = shallow(<App />);
+
         return (
             <React.Fragment> 
                 <Notifications
