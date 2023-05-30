@@ -18,10 +18,9 @@ class App extends React.Component {
         // Initialize the component state set default value for displayDrawer.
         this.state =  {
             displayDrawer: false
-        };
-        this.handleKeyDown = this.handleKeyDown.bind(this);
+        }
     }
-
+// this.handleKeyDown = this.handleKeyDown.bind(this);
     componentDidMount() {
 // Add event listener to listen for keyboard events when component is mounted
         document.addEventListener('keydown', this.handleKeyDown);
