@@ -68,10 +68,11 @@ class App extends React.Component {
         return (
             <React.Fragment> 
                 <Notifications
-                displayDrawer={this.state.displayDrawer} // Pass displayDrawer prop using local state
-                handleDrawer={this.handleDisplayDrawer} // Pass handleDisplayDrawer function
-                handleHideDrawer={this.handleHideDrawer} // Pass handleHideDrawer function
-                listNotifications={listNotifications}/>
+                    displayDrawer={this.state.displayDrawer} // Pass displayDrawer prop using local state
+                    handleDrawer={this.handleDisplayDrawer} // Pass handleDisplayDrawer function
+                    handleHideDrawer={this.handleHideDrawer} // Pass handleHideDrawer function
+                    listNotifications={listNotifications}
+                />
                 <div className={"App"}>
                     <Header />
                     <div className={"App-body"}>
