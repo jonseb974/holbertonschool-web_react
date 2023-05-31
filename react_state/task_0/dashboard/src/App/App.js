@@ -37,17 +37,17 @@ class App extends React.Component {
             alert('Logging you out');  // Display alert + call logOut function
             this.props.logOut(); // from  props
         }
-    };
+    }
 
     handleDisplayDrawer =  () => {
         // Update state to display the drawer
         this.setState({ displayDrawer: true});
-    };
+    }
 
     handleHideDrawer =  () => {
         // Update state to hide the drawer
         this.setState({ displayDrawer: false});
-    };
+    }
 
     render() {
         const isLoggedIn = this.props.isLoggedIn;
@@ -67,33 +67,33 @@ class App extends React.Component {
         return (
             <> 
                 <Notifications
-                    displayDrawer={this.state.displayDrawer} // Pass displayDrawer prop using local state
-                    handleDrawer={this.handleDisplayDrawer} // Pass handleDisplayDrawer function
-                    handleHideDrawer={this.handleHideDrawer} // Pass handleHideDrawer function
                     listNotifications={listNotifications}
+                    displayDrawer={this.state.displayDrawer} // Pass displayDrawer prop using local state
+                    handleDisplayDrawer={this.handleDisplayDrawer} // Pass handleDisplayDrawer function
+                    handleHideDrawer={this.handleHideDrawer} // Pass handleHideDrawer function
                 />
-                <div className={"App"}>
-                    <Header />
-                    <div className={css(styles.body)}>
-                        {isLoggedIn === true && (
-                            <BodySectionWithMarginBottom title={"Course list"}>
-                                <CourseList listCourses={listCourses}/>
-                            </BodySectionWithMarginBottom>
-                        )}
-                        {isLoggedIn === false && (
-                            <BodySectionWithMarginBottom title={"Log in to continue"}>
-                                <Login/>
-                            </BodySectionWithMarginBottom>
-                        )}
-                        <BodySection title={"News from the School"}>
-                            <p>Hello World!</p>
-                        </BodySection>
-                    </div>
-                    <Footer />
+                <Header />
+                <div className={css(styles.body)}>
+                    {
+                        isLoggedIn === true &&
+                        <BodySectionWithMarginBottom title={"Course list"}>
+                            <CourseList listCourses={listCourses}/>
+                        </BodySectionWithMarginBottom>
+                    }
+                    {
+                        isLoggedIn === false && 
+                        <BodySectionWithMarginBottom title={"Log in to continue"}>
+                            <Login/>
+                        </BodySectionWithMarginBottom>
+                    }
+                    <BodySection title={"News from the School"}>
+                        <p>Hello World!</p>
+                    </BodySection>
                 </div>
+                <Footer />
             </>
         );
-    }
+    };
 }
 
 App.propTypes = {
