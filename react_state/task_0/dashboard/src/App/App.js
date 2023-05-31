@@ -1,54 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import PropTypes from 'prop-types';
-import { StyleSheet, css } from 'aphrodite';
-import {getLatestNotification} from '../utils/utils';
-
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import CourseList from '../CourseList/CourseList';
 import Footer from '../Footer/Footer';
+import {getLatestNotification} from '../utils/utils';
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 import BodySection from "../BodySection/BodySection";
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        // Initialize the component state set default value for displayDrawer.
-        this.state =  { displayDrawer: false };
+        this.state = { displayDrawer: false };
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
         this.handleHideDrawer = this.handleHideDrawer.bind(this);
+
     }
-// this.handleKeyDown = this.handleKeyDown.bind(this);
     componentDidMount() {
-// Add event listener to listen for keyboard events when component is mounted
         document.addEventListener('keydown', this.handleKeyDown);
     }
-// Remove event listener when component is unmounted to prevent memory leaks
+
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyDown);
     }
 
     handleKeyDown = (event) => {
-        // Check if user pressed [Ctr + h]
         if (event.ctrlKey && event.key === 'h') {
             event.preventDefault();
-            alert('Logging you out');  // Display alert + call logOut function
-            this.props.logOut(); // from  props
+            alert('Logging you out');
+            this.props.logOut();
         }
     }
 
-    handleDisplayDrawer =  () => {
-        // Update state to display the drawer
-        this.setState({ displayDrawer: true});
+    handleDisplayDrawer = () => {
+        this.setState({ displayDrawer: true });
     }
 
-    handleHideDrawer =  () => {
-        // Update state to hide the drawer
-        this.setState({ displayDrawer: false});
+    handleHideDrawer = () => {
+        this.setState({ displayDrawer: false })
     }
-
     render() {
         const isLoggedIn = this.props.isLoggedIn;
 
@@ -63,15 +57,12 @@ class App extends React.Component {
             {id: 2, type: "urgent", value: "New resume available"},
             {id: 3, type: "urgent", html: {__html: getLatestNotification()}},
         ]
-
         return (
-            <> 
-                <Notifications
-                    listNotifications={listNotifications}
-                    displayDrawer={this.state.displayDrawer} // Pass displayDrawer prop using local state
-                    handleDisplayDrawer={this.handleDisplayDrawer} // Pass handleDisplayDrawer function
-                    handleHideDrawer={this.handleHideDrawer} // Pass handleHideDrawer function
-                />
+            <React.Fragment>
+                <Notifications listNotifications={listNotifications}
+                               displayDrawer={this.state.displayDrawer}
+                               handleDisplayDrawer={this.handleDisplayDrawer}
+                               handleHideDrawer={this.handleHideDrawer} />
                 <Header />
                 <div className={css(styles.body)}>
                     {
@@ -81,7 +72,7 @@ class App extends React.Component {
                         </BodySectionWithMarginBottom>
                     }
                     {
-                        isLoggedIn === false && 
+                        isLoggedIn === false &&
                         <BodySectionWithMarginBottom title={"Log in to continue"}>
                             <Login/>
                         </BodySectionWithMarginBottom>
@@ -91,7 +82,7 @@ class App extends React.Component {
                     </BodySection>
                 </div>
                 <Footer />
-            </>
+            </React.Fragment>
         );
     };
 }
