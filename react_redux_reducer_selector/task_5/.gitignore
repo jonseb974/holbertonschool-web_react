@@ -3,5 +3,5 @@
 **/.__*
 **/._App*
 **/._BodySection*
-
+node_modules
 !.gitignore
