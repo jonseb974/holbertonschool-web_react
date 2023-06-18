@@ -1,7 +1,7 @@
 .*
 **/._*
 **/.__*
-._App
-._BodySection
+**/._App*
+**/._BodySection*
 
 !.gitignore
